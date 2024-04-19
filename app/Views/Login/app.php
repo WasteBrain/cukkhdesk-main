@@ -29,13 +29,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: May 30 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -61,10 +54,13 @@
 
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Login</h5>
-                    <p class="text-center small">Enter your username & password to login</p>
+                    <p class="text-center small">Enter your username & password to login</p><br>
+                    <?php if(session()->getFlashdata('msg')):?>
+                      <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
+                    <?php endif;?>
                   </div>
 
-                  <form class="row g-3 needs-validation" action="<?= base_url('/Login'); ?>" method="post" enctype="multipart/form-data" wire:submit.prevent="savePersonalData" onkeydown="return event.key != 'Enter';">
+                  <form class="row g-3 needs-validation" action="/login" method="post" enctype="multipart/form-data" wire:submit.prevent="savePersonalData" onkeydown="return event.key != 'Enter';">
 
                   <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>

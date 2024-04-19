@@ -33,7 +33,7 @@
 
 <body>
 
-    <?= $this->include('BO/Structure/header'); ?>
+    <?= $this->include('Admin/Structure/header'); ?>
 
 <main id="main" class="main">
 
@@ -76,6 +76,27 @@
           </div>
         </div><!-- End Sales Card -->
 
+        <!-- Sales Card -->
+        <div class="col-xxl-4 col-md-6">
+          <div class="card info-card sales-card">
+
+            <div class="card-body">
+              <h5 class="card-title">Ticket Handled <span>| This Month</span></h5>
+
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="bi bi-tools"></i>
+                </div>
+                <div class="ps-3">
+                  <h6>145</h6>
+                  <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- End Sales Card -->
         <!-- Reports -->
         <div class="col-12">
           <div class="card">
@@ -155,6 +176,7 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Branch Office</th>
                     <th scope="col">Problem Description</th>
                     <th scope="col">File</th>
                     <th scope="col">Date Submitted</th>
@@ -165,6 +187,7 @@
                 <tbody>
                                 <tr>
                                     <td>1</td>
+                                    <td>Badau</td>
                                     <td>Network Connectivity Issue</td>
                                     <td><a href="file1.pdf">file1.pdf</a></td>
                                     <td>2024-04-18</td>
@@ -173,6 +196,7 @@
                                 </tr>
                                 <tr>
                                     <td>2</td>
+                                    <td>Lanjak</td>
                                     <td>Software Installation Problem</td>
                                     <td><a href="file2.docx">file2.docx</a></td>
                                     <td>2024-04-17</td>
@@ -181,6 +205,7 @@
                                 </tr>
                                 <tr>
                                     <td>3</td>
+                                    <td>Rumah Sepan</td>
                                     <td>Hardware Malfunction</td>
                                     <td><a href="file3.jpg">file3.jpg</a></td>
                                     <td>2024-04-16</td>
@@ -189,6 +214,7 @@
                                 </tr>
                                 <tr>
                                     <td>4</td>
+                                    <td>Nanga Mau</td>
                                     <td>Printer Not Printing</td>
                                     <td><a href="file4.pdf">file4.pdf</a></td>
                                     <td>2024-04-15</td>
@@ -197,6 +223,7 @@
                                 </tr>
                                 <tr>
                                     <td>5</td>
+                                    <td>Merakai</td>
                                     <td>Email Configuration Issue</td>
                                     <td><a href="file5.txt">file5.txt</a></td>
                                     <td>2024-04-14</td>
@@ -220,7 +247,7 @@
 
 </main><!-- End #main -->
 
-    <?= $this->include('BO/Structure/footer'); ?>
+    <?= $this->include('Admin/Structure/footer'); ?>
   <!-- Vendor JS Files -->
   <script src="<?php echo base_url(); ?>assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
