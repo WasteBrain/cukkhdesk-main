@@ -31,4 +31,35 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Front\Admin'], static f
 
 $routes->group('afi', ['namespace' => 'App\Controllers\Front\AFI'], static function ($routes) {
     $routes->get('dashboard', 'Kontrol::index');
+    $routes->get('onholdticket', 'Kontrol::onholdticket');
+    $routes->get('otoritizedticket', 'Kontrol::otoritizedticket');
+    $routes->get('rejectedticket', 'Kontrol::rejectedticket');
+});
+
+$routes->group('ccd', ['namespace' => 'App\Controllers\Front\CCD'], static function ($routes) {
+    $routes->get('dashboard', 'Kontrol::index');
+    $routes->get('onholdticket', 'Kontrol::onholdticket');
+    $routes->get('otoritizedticket', 'Kontrol::otoritizedticket');
+    $routes->get('rejectedticket', 'Kontrol::rejectedticket');
+});
+
+$routes->group('risk', ['namespace' => 'App\Controllers\Front\Risk'], static function ($routes) {
+    $routes->get('dashboard', 'Kontrol::index');
+    $routes->get('onholdticket', 'Kontrol::onholdticket');
+    $routes->get('otoritizedticket', 'Kontrol::otoritizedticket');
+    $routes->get('rejectedticket', 'Kontrol::rejectedticket');
+});
+
+$routes->group('atm', ['namespace' => 'App\Controllers\Front\PIC\ATM'], static function ($routes) {
+    $routes->get('dashboard', 'Kontrol::index');
+    $routes->get('onholdticket', 'Kontrol::onhold');
+    $routes->get('inprogressticket', 'Kontrol::inprogress');
+    $routes->get('resolvedticket', 'Kontrol::resolved');
+});
+
+$routes->group('hdd', ['namespace' => 'App\Controllers\Front\PIC\HARDWARE'], static function ($routes) {
+    $routes->get('dashboard', 'Kontrol::index');
+    $routes->get('onholdticket', 'Kontrol::onhold');
+    $routes->get('inprogressticket', 'Kontrol::inprogress');
+    $routes->get('resolvedticket', 'Kontrol::resolved');
 });

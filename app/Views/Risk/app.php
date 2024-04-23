@@ -33,7 +33,7 @@
 
 <body>
 
-    <?= $this->include('AFI/Structure/header'); ?>
+    <?= $this->include('Risk/Structure/header'); ?>
 
 <main id="main" class="main">
 
@@ -41,7 +41,7 @@
   <h1>Dashboard</h1>
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="<?= base_url('risk/dashboard') ?>">Home</a></li>
       <li class="breadcrumb-item active">Dashboard</li>
     </ol>
   </nav>
@@ -141,7 +141,7 @@
                                 <tr>
                                     <td>1</td>
                                     <td>Badau</td>
-                                    <td>Withdrawal of savings on inter-office transfers</td>
+                                    <td>withdrawal of savings which is collateral</td>
                                     <td><a href="file1.pdf">file1.pdf</a></td>
                                     <td>2024-04-18</td>
                                     <td><span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>On Hold</span></td>
@@ -149,7 +149,7 @@
                                 <tr>
                                     <td>2</td>
                                     <td>Lanjak</td>
-                                    <td>Withdrawal of savings on inter-office transfers</td>
+                                    <td>Application for reducing loan installment interest</td>
                                     <td><a href="file2.docx">file2.docx</a></td>
                                     <td>2024-04-17</td>
                                     <td><span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>On Hold</span></td>
@@ -157,7 +157,7 @@
                                 <tr>
                                     <td>3</td>
                                     <td>Rumah Sepan</td>
-                                    <td>Withdrawal of savings on inter-office transfers</td>
+                                    <td>Application to pay loan installments with only half interest</td>
                                     <td><a href="file3.jpg">file3.jpg</a></td>
                                     <td>2024-04-16</td>
                                     <td><span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>On Hold</span></td>
@@ -165,7 +165,7 @@
                                 <tr>
                                     <td>4</td>
                                     <td>Nanga Mau</td>
-                                    <td>Withdrawal of savings on inter-office transfers</td>
+                                    <td>Request for loan term input errors</td>
                                     <td><a href="file4.pdf">file4.pdf</a></td>
                                     <td>2024-04-15</td>
                                     <td><span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>On Hold</span></td>
@@ -173,7 +173,7 @@
                                 <tr>
                                     <td>5</td>
                                     <td>Merakai</td>
-                                    <td>Withdrawal of savings on inter-office transfers</td>
+                                    <td>Error in inputting loan interest percentage</td>
                                     <td><a href="file5.txt">file5.txt</a></td>
                                     <td>2024-04-14</td>
                                     <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Authorized</span></td>
@@ -195,7 +195,7 @@
 
 </main><!-- End #main -->
 
-    <?= $this->include('AFI/Structure/footer'); ?>
+    <?= $this->include('Risk/Structure/footer'); ?>
   <!-- Vendor JS Files -->
   <script src="<?php echo base_url(); ?>assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

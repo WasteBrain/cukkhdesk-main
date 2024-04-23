@@ -2,7 +2,7 @@
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
   <div class="d-flex align-items-center justify-content-between">
-    <a href="<?= base_url('afi/dashboard') ?>" class="logo d-flex align-items-center">        
+    <a href="<?= base_url('hdd/dashboard') ?>" class="logo d-flex align-items-center">        
       <img src="<?php echo base_url(); ?>assets/img/icon.png" alt="">
       <span class="d-none d-lg-block">HELPDESK</span>
     </a>
@@ -17,13 +17,13 @@
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="<?php echo base_url(); ?>assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">FINANCE DEPARTMENT</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2">PIC Name</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>FINANCE DEPARTMENT</h6>
-              <span>Head Office</span>
+              <h6>HARDWARE TECNICIAN</h6>
+              <span>ITD - Head Office</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -62,7 +62,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('afi/dashboard') ?>">
+            <a class="nav-link" href="<?= base_url('hdd/dashboard') ?>">
             <i class="ri-apps-fill"></i>
             <span>Dashboard</span>
             </a>
@@ -74,18 +74,23 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="<?= base_url('afi/onholdticket') ?>">
+            <a href="<?= base_url('hdd/onholdticket') ?>">
               <i class="bi bi-circle"></i><span>On Hold</span>
             </a>
           </li>
           <li>
-            <a href="<?= base_url('afi/otoritizedticket') ?>">
-              <i class="bi bi-circle"></i><span>Authorized</span>
+            <a href="<?= base_url('hdd/inprogressticket') ?>">
+              <i class="bi bi-circle"></i><span>In Progress</span>
             </a>
           </li>
           <li>
-            <a href="<?= base_url('afi/rejectedticket') ?>">
-              <i class="bi bi-circle"></i><span>Rejected</span>
+            <a href="<?= base_url('hdd/resolvedticket') ?>">
+              <i class="bi bi-circle"></i><span>Resolved</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>My Productivity</span>
             </a>
           </li>
         </ul>

@@ -32,15 +32,15 @@
 </head>
 
 <body>
-    <?= $this->include('Admin/Structure/header'); ?>
+    <?= $this->include('Risk/Structure/header'); ?>
 <main id="main" class="main">
 
     <div class="pagetitle">
         <h1>Ticket</h1>
         <nav>
             <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard') ?>">Home</a></li>
-            <li class="breadcrumb-item active">Submitted Ticket</li>
+            <li class="breadcrumb-item"><a href="<?= base_url('risk/dashboard') ?>">Home</a></li>
+            <li class="breadcrumb-item active">On Holded Ticket</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -68,7 +68,7 @@
                                 <tr>
                                     <td>1</td>
                                     <td>Badau</td>
-                                    <td>Network Connectivity Issue</td>
+                                    <td>Error in inputting loan interest percentage</td>
                                     <td><a href="file1.pdf">file1.pdf</a></td>
                                     <td>2024-04-18</td>
                                     <td>
@@ -78,7 +78,7 @@
                                 <tr>
                                     <td>2</td>
                                     <td>Tapang Pulau</td>
-                                    <td>Software Installation Problem</td>
+                                    <td>Error in inputting loan interest percentage</td>
                                     <td><a href="file2.docx">file2.docx</a></td>
                                     <td>2024-04-17</td>
                                     <td><button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button></td>
@@ -86,7 +86,7 @@
                                 <tr>
                                     <td>3</td>
                                     <td>Belikai</td>
-                                    <td>Hardware Malfunction</td>
+                                    <td>Application to pay loan installments with only half interest</td>
                                     <td><a href="file3.jpg">file3.jpg</a></td>
                                     <td>2024-04-16</td>
                                     <td><button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button></td>
@@ -94,7 +94,7 @@
                                 <tr>
                                     <td>4</td>
                                     <td>Rumah Sepan</td>
-                                    <td>Email Configuration Issue</td>
+                                    <td>Withdrawal of savings on inter-office transfers, Inter-office transfer process for loan installment payments</td>
                                     <td><a href="file4.txt">file4.txt</a></td>
                                     <td>2024-04-15</td>
                                     <td><button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button></td>
@@ -102,7 +102,7 @@
                                 <tr>
                                     <td>5</td>
                                     <td>Bodok</td>
-                                    <td>Printer Not Printing</td>
+                                    <td>Application for reducing loan installment interest</td>
                                     <td><a href="file5.pdf">file5.pdf</a></td>
                                     <td>2024-04-14</td>
                                     <td><button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button></td>
@@ -110,7 +110,7 @@
                                 <tr>
                                     <td>6</td>
                                     <td>Tumbang Kejamei</td>
-                                    <td>Database Error</td>
+                                    <td>Withdrawal of savings on inter-office transfers, Inter-office transfer process for loan installment payments</td>
                                     <td><a href="file6.sql">file6.sql</a></td>
                                     <td>2024-04-13</td>
                                     <td><button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button></td>
@@ -118,7 +118,7 @@
                                 <tr>
                                     <td>7</td>
                                     <td>Kantor Sentral</td>
-                                    <td>Application Crashing</td>
+                                    <td>Application for reducing loan installment interest</td>
                                     <td><a href="file7.log">file7.log</a></td>
                                     <td>2024-04-12</td>
                                     <td><button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button></td>
@@ -150,7 +150,7 @@
                     <div class="row mb-3">
                         <label class="col-sm-4 col-form-label">Problem Description</label>
                         <div class="col-sm-8">
-                            <textarea class="form-control" name="inputProblem" style="height: 100px;" disabled>Network Connectivity Issue</textarea>
+                            <textarea class="form-control" name="inputProblem" style="height: 100px;" disabled>Withdrawal of savings on inter-office transfers</textarea>
                         </div>
                     </div>   
                     <div class="row mb-3">
@@ -158,48 +158,14 @@
                         <div class="col-sm-8"> <input type="text" class="form-control" name="dateSubmitted" value="2024-04-18" disabled> </div>
                     </div>
                     <div class="row mb-3">
-                        <label class="col-sm-4 col-form-label">Category</label>
+                        <label class="col-sm-4 col-form-label">Approval Decision</label>
                         <div class="col-sm-8">
                             <select class="form-select" aria-label="Default select example">
-                                <option value="1">Software</option>
-                                <option value="2">Hardware</option>
-                                <option value="3">Networking</option>
+                                <option value="1">Approve</option>
+                                <option value="2">Reject</option>
                             </select>
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-4 col-form-label">Authorized by</label>
-                        <div class="col-sm-8">
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="1">AFI</option>
-                                <option value="2">CCD</option>
-                                <option value="3">RISK</option>
-                                <option value="3">IT</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-4 col-form-label">Handed to</label>
-                        <div class="col-sm-8">
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="1">ANDI</option>
-                                <option value="2">HENDRO</option>
-                                <option value="3">EGO</option>
-                                <option value="4">RIO</option>
-                                <option value="5">INDRA</option>
-                                <option value="6">CIKA</option>
-                                <option value="7">ANDI</option>
-                                <option value="8">TENDO</option>
-                                <option value="9">ABET</option>
-                                <option value="10">YANTO</option>
-                                <option value="11">RIDWAN</option>
-                                <option value="12">EVAN</option>
-                                <option value="13">CANDRA</option>
-                                <option value="14">ATOT</option>
-                            </select>
-                        </div>
-                    </div>
-
                     <div class="row mb-3">
                         <label class="col-sm-4 col-form-label">Note</label>
                         <div class="col-sm-8">
@@ -216,7 +182,7 @@
     </div>
 </div>
 
-<?= $this->include('Admin/Structure/footer'); ?>
+<?= $this->include('CCD/Structure/footer'); ?>
   <!-- Vendor JS Files -->
   <script src="<?php echo base_url(); ?>assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

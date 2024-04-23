@@ -60,9 +60,7 @@
                                     <th scope="col">Problem Description</th>
                                     <th scope="col">File</th>
                                     <th scope="col">Date Submitted</th>
-                                    <th scope="col">Category</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col">Technician Note</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -71,108 +69,84 @@
                                     <td>Network Connectivity Issue</td>
                                     <td><a href="file1.pdf">file1.pdf</a></td>
                                     <td>2024-04-18</td>
-                                    <td>Networking</td>
                                     <td><span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>In Progress</span></td>
-                                    <td>Checking router configurations.</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>Software Installation Problem</td>
                                     <td><a href="file2.docx">file2.docx</a></td>
                                     <td>2024-04-17</td>
-                                    <td>Software</td>
                                     <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-                                    <td>Installed the required software update.</td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>Hardware Malfunction</td>
                                     <td><a href="file3.jpg">file3.jpg</a></td>
                                     <td>2024-04-16</td>
-                                    <td>Hardware</td>
-                                    <td><span class="badge bg-secondary"><i class="bi bi-collection me-1"></i>Waiting for Parts</span></td>
-                                    <td>Ordered replacement parts.</td>
+                                    <td><span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>On Hold</span></td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
                                     <td>Printer Not Printing</td>
                                     <td><a href="file4.pdf">file4.pdf</a></td>
                                     <td>2024-04-15</td>
-                                    <td>Hardware</td>
                                     <td><span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>On Hold</span></td>
-                                    <td>Waiting for user response.</td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
                                     <td>Email Configuration Issue</td>
                                     <td><a href="file5.txt">file5.txt</a></td>
                                     <td>2024-04-14</td>
-                                    <td>Networking</td>
                                     <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-                                    <td>Reset email settings.</td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
                                     <td>Slow Internet Connection</td>
                                     <td><a href="file6.png">file6.png</a></td>
                                     <td>2024-04-13</td>
-                                    <td>Networking</td>
                                     <td><span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>In Progress</span></td>
-                                    <td>Investigating potential causes.</td>
                                 </tr>
                                 <tr>
                                     <td>7</td>
                                     <td>Database Error</td>
                                     <td><a href="file7.sql">file7.sql</a></td>
                                     <td>2024-04-12</td>
-                                    <td>Software</td>
                                     <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-                                    <td>Performed database optimization.</td>
                                 </tr>
                                 <tr>
                                     <td>8</td>
                                     <td>Monitor Display Issue</td>
                                     <td><a href="file8.jpg">file8.jpg</a></td>
                                     <td>2024-04-11</td>
-                                    <td>Hardware</td>
                                     <td><span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>In Progress</span></td>
-                                    <td>Checking monitor connections.</td>
                                 </tr>
                                 <tr>
                                     <td>9</td>
                                     <td>Application Crashing</td>
                                     <td><a href="file9.log">file9.log</a></td>
                                     <td>2024-04-10</td>
-                                    <td>Software</td>
                                     <td><span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>On Hold</span></td>
-                                    <td>Waiting for crash log analysis.</td>
                                 </tr>
                                 <tr>
                                     <td>10</td>
                                     <td>Keyboard Malfunction</td>
                                     <td><a href="file10.docx">file10.docx</a></td>
                                     <td>2024-04-09</td>
-                                    <td>Hardware</td>
                                     <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-                                    <td>Replaced malfunctioning keyboard.</td>
                                 </tr>
                                 <tr>
                                     <td>11</td>
                                     <td>Software License Issue</td>
                                     <td><a href="file11.txt">file11.txt</a></td>
                                     <td>2024-04-08</td>
-                                    <td>Software</td>
                                     <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i>Rejected</span></td>
-                                    <td>License expired.</td>
                                 </tr>
                                 <tr>
                                     <td>12</td>
                                     <td>Unauthorized Access</td>
                                     <td><a href="file12.docx">file12.docx</a></td>
                                     <td>2024-04-07</td>
-                                    <td>Security</td>
                                     <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i>Rejected</span></td>
-                                    <td>No further action needed. User error.</td>
                                 </tr>
                             </tbody>
                         </table>

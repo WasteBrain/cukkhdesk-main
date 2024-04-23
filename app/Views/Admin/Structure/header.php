@@ -73,6 +73,11 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>New Ticket - Manual Input</span>
+            </a>
+          </li>
+          <li>
             <a href="<?= base_url('admin/viewticket') ?>">
               <i class="bi bi-circle"></i><span>Submitted</span>
             </a>

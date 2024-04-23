@@ -61,7 +61,7 @@
                                     <th scope="col">Problem Description</th>
                                     <th scope="col">Date Submitted</th>
                                     <th scope="col">Category</th>
-                                    <th scope="col">Otoritized By</th>
+                                    <th scope="col">Authorized By</th>
                                     <th scope="col">PIC</th>
                                 </tr>
                             </thead>
@@ -72,7 +72,7 @@
                                     <td>Network Connectivity Issue</td>
                                     <td>2024-04-18</td>
                                     <td>Networking</td>
-                                    <td>ITD <br> <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Otoritized</span></td>
+                                    <td>ITD <br> <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Authorized</span></td>
                                     <td>RIDWAN <br> <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>In Progress</span></td>
                                 </tr>
                                 <tr>
@@ -108,7 +108,7 @@
                                     <td>Printer Not Printing</td>
                                     <td>2024-04-18</td>
                                     <td>Hardware</td>
-                                    <td>ITD <br> <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Otoritized</span></td>
+                                    <td>ITD <br> <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Authorized</span></td>
                                     <td>Abet <br> <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>In Progress</span></td>
                                 </tr>
                                 <tr>
@@ -117,7 +117,7 @@
                                     <td>Database Error</td>
                                     <td>2024-04-18</td>
                                     <td>Software</td>
-                                    <td>ITD <br> <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Otoritized</span></td>
+                                    <td>ITD <br> <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Authorized</span></td>
                                     <td>Ego <br> <span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>On Hold</span></td>
                                 </tr>
                                 <tr>
@@ -126,7 +126,7 @@
                                     <td>Application Crashing</td>
                                     <td>2024-04-18</td>
                                     <td>Software</td>
-                                    <td>ITD <br> <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Otoritized</span></td>
+                                    <td>ITD <br> <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Authorized</span></td>
                                     <td>Riyo <br> <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>In Progress</span></td>
                                 </tr>
                             </tbody>

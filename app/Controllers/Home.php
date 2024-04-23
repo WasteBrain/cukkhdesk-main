@@ -19,29 +19,29 @@ class Home extends BaseController
             2) Admin IT
                 Admin
                 ADMIN123!
-            5) AFI
+            3) AFI
                 Keuangan
                 afi123!
-            
-            3) Risk
-                Risk
-                risk123!
             4) CCD
                 Kredit
-                kredit123!
+                CCD123!
+            
+            5) Risk
+                Risk
+                RMD123!
             
             6) PIC
-                Yanto
-                jaringan1
+                Riyo
+                ATM123!
 
                 Abet
                 hardware1
+                
+                Yanto
+                jaringan1               
 
                 Indra
                 software1
-
-                Riyo
-                atm123!
 
                 Atot
                 kkd123!
@@ -56,10 +56,18 @@ class Home extends BaseController
 
             if ($username == 'BranchOffice' && $password=='BO123!') {                
                 return redirect()->to('bo/dashboard');
-            }elseif ($username == 'Admin' && $password=='ADMIN123!') {
+            }elseif ($username == 'Admin' && $password=='ADM123!') {
                 return redirect()->to('admin/dashboard');
             }elseif ($username == 'Keuangan' && $password=='AFI123!') {
                 return redirect()->to('afi/dashboard');
+            }elseif ($username == 'Kredit' && $password=='CCD123!') {
+                return redirect()->to('ccd/dashboard');
+            }elseif ($username == 'Risk' && $password=='RMD123!') {
+                return redirect()->to('risk/dashboard');
+            }elseif ($username == 'Riyo' && $password=='ATM123!') {
+                return redirect()->to('atm/dashboard');
+            }elseif ($username == 'Abet' && $password=='HDD123!') {
+                return redirect()->to('hdd/dashboard');
             }else {
                 $session->setFlashdata('msg', 'Wrong username and password');
                 return $this->index();

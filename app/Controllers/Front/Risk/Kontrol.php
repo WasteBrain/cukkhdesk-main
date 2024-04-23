@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\Front\AFI;
+namespace App\Controllers\Front\Risk;
 
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -8,17 +8,17 @@ use CodeIgniter\HTTP\ResponseInterface;
 class Kontrol extends BaseController
 {
     public function index(){
-        return view('AFI/app');
+        return view('Risk/app');
     }
     public function onholdticket(){
-        return view('AFI/onholdticket');
+        return view('Risk/onholdticket');
     }
 
     public function otoritizedticket(){
-        return view('AFI/otoritizedticket');
+        return view('Risk/otoritizedticket');
     }
 
     public function rejectedticket(){
-        return view('AFI/rejectedticket');
+        return view('Risk/rejectedticket');
     }
 }

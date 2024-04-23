@@ -32,15 +32,15 @@
 </head>
 
 <body>
-    <?= $this->include('Admin/Structure/header'); ?>
+    <?= $this->include('PIC/ATM/Structure/header'); ?>
 <main id="main" class="main">
 
     <div class="pagetitle">
         <h1>Ticket</h1>
         <nav>
             <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard') ?>">Home</a></li>
-            <li class="breadcrumb-item active">Ticket Done</li>
+            <li class="breadcrumb-item"><a href="<?= base_url('atm/dashboard') ?>">Home</a></li>
+            <li class="breadcrumb-item active">On Holded Ticket</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -59,83 +59,69 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Branch Office</th>
                                     <th scope="col">Problem Description</th>
+                                    <th scope="col">File</th>
                                     <th scope="col">Date Submitted</th>
-                                    <th scope="col">Category</th>
-                                    <th scope="col">Authorized By</th>
-                                    <th scope="col">PIC</th>
-                                    <th scope="col">Result</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1</td>
                                     <td>Badau</td>
-                                    <td>Network Connectivity Issue</td>
+                                    <td>ATM Error</td>
+                                    <td><a href="file1.pdf">file1.pdf</a></td>
                                     <td>2024-04-18</td>
-                                    <td>Networking</td>
-                                    <td>ITD</td>
-                                    <td>RIDWAN</td>
-                                    <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#actionModal"><i class="bi bi-eye"></i></a>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>Tapang Pulau</td>
-                                    <td>Withdrawal of savings on inter-office transfers</td>
-                                    <td>2024-04-18</td>
-                                    <td>Software</td>
-                                    <td>RISK</td>
-                                    <td>Indra</td>
-                                    <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
+                                    <td>ATM Error</td>
+                                    <td><a href="file2.docx">file2.docx</a></td>
+                                    <td>2024-04-17</td>
+                                    <td><button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button></td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>Belikai</td>
-                                    <td>Hardware Malfunction</td>
-                                    <td>2024-04-18</td>
-                                    <td>Hardware</td>
-                                    <td>ITD</td>
-                                    <td>Tendo</td>
-                                    <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
+                                    <td>ATM Error</td>
+                                    <td><a href="file3.jpg">file3.jpg</a></td>
+                                    <td>2024-04-16</td>
+                                    <td><button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button></td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
                                     <td>Rumah Sepan</td>
-                                    <td>SIP Issue</td>
-                                    <td>2024-04-18</td>
-                                    <td>Software</td>
-                                    <td>ITD</td>
-                                    <td>Andi</td>
-                                    <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
+                                    <td>ATM Error</td>
+                                    <td><a href="file4.txt">file4.txt</a></td>
+                                    <td>2024-04-15</td>
+                                    <td><button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button></td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
                                     <td>Bodok</td>
-                                    <td>Printer Not Printing</td>
-                                    <td>2024-04-18</td>
-                                    <td>Hardware</td>
-                                    <td>ITD</td>
-                                    <td>Abet</td>
-                                    <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
+                                    <td>ATM Error</td>
+                                    <td><a href="file5.pdf">file5.pdf</a></td>
+                                    <td>2024-04-14</td>
+                                    <td><button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button></td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
                                     <td>Tumbang Kejamei</td>
-                                    <td>Database Error</td>
-                                    <td>2024-04-18</td>
-                                    <td>Software</td>
-                                    <td>ITD</td>
-                                    <td>Ego</td>
-                                    <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
+                                    <td>ATM Error</td>
+                                    <td><a href="file6.sql">file6.sql</a></td>
+                                    <td>2024-04-13</td>
+                                    <td><button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button></td>
                                 </tr>
                                 <tr>
                                     <td>7</td>
                                     <td>Kantor Sentral</td>
-                                    <td>Application Crashing</td>
-                                    <td>2024-04-18</td>
-                                    <td>Software</td>
-                                    <td>ITD</td>
-                                    <td>Riyo</td>
-                                    <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
+                                    <td>ATM Error</td>
+                                    <td><a href="file7.log">file7.log</a></td>
+                                    <td>2024-04-12</td>
+                                    <td><button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -148,7 +134,43 @@
 
 </main><!-- End #main -->
 
-<?= $this->include('Admin/Structure/footer'); ?>
+<div class="modal fade" id="actionModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <form action="#" method="post" enctype="multipart/form-data" wire:submit.prevent="savePersonalData" onkeydown="return event.key != 'Enter';">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#123670; color:white;">
+                    <h5 class="modal-title">Action</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Branch Office</label>
+                        <div class="col-sm-8"> <input type="text" class="form-control" name="kodeKas" value="Badau" disabled> </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Problem Description</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" name="inputProblem" style="height: 100px;" disabled>ATM Error</textarea>
+                        </div>
+                    </div>   
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Date Submitted</label>
+                        <div class="col-sm-8"> <input type="text" class="form-control" name="dateSubmitted" value="2024-04-18" disabled> </div>
+                    </div>
+                   <hr>
+                   Kamu akan mengerjakan case ini. Status ticket akan berubah dari <b>On Hold</b> menjadi <b>In Progress</b>. Durasi perbaikan akan dihitung sejak Tombol YES diklik.
+                
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-dark" data-bs-dismiss="modal">Close</a>
+                    <button type="submit" class="btn btn-primary">YES</button>
+                </div>
+            </div>
+        </form> 
+    </div>
+</div>
+
+<?= $this->include('CCD/Structure/footer'); ?>
   <!-- Vendor JS Files -->
   <script src="<?php echo base_url(); ?>assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -46,9 +46,9 @@
                   <img src="assets/img/icon.png" alt="">
                   <span class="d-none d-lg-block">HELPDESK</span>
                 </a>
-              </div><!-- End Logo -->
+              </div>
 
-              <div class="card mb-3">
+              <div class="card mb-3" style="background-color: rgba(255, 255, 255, 0.5);">
 
                 <div class="card-body">
 
@@ -92,17 +92,15 @@
               </div>
 
               <div class="credits">
-                Frontend by <a target="_blank" href="https://www.linkedin.com/in/alexander-alexander-b2ba03152/"> Alexander</a>, 
-                Backend by <a href="#">Severinus Grata Gandi (Atot)</a>, 
-                Database by <a href="#">Andreas Andi</a> 
+                Frontend by <a target="_blank" href="https://www.linkedin.com/in/alexander-alexander-b2ba03152/"> Alex</a>, 
+                Backend by <a href="#">Atot</a>, 
+                Database by <a href="#">Andi</a> 
               </div>
 
             </div>
           </div>
         </div>
-
       </section>
-
     </div>
   </main><!-- End #main -->
 
