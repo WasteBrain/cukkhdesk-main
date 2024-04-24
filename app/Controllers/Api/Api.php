@@ -12,39 +12,52 @@ class Api extends BaseController
     use ResponseTrait;
 
     // login api
+    // login sudah disesuaikan dengan php, dan bisa flashdata, ganti route form login ke api/login
     public function login()
     {
+        $session = session();
         // Get request bodi
-        $requestBody = $this->request->getBody();
+        $requestBody = array();
+        $requestBody['username'] = $_POST['username'];
+        $requestBody['password'] = $_POST['password'];
+        // $requestBody = $this->request->getBody();
         $validation = \Config\Services::validation();
-        $jsonData = json_decode($requestBody, true);
+        // $jsonData = json_decode($requestBody, true);
 
-        // Validat JSON data
-        if (!$jsonData || !isset($jsonData['username']) || !isset($jsonData['password'])) {
-            return $this->failUnauthorized('Invalid username or password');
+        // // validasi not empty
+        if (!$requestBody || !isset($requestBody['username']) || !isset($requestBody['password'])) {
+            // return $this->failUnauthorized('Invalid username or password');
+            $session->setFlashdata('gagal', 'tidak boleh kosong!');
+            return redirect()->to(base_url('/'));
         }
 
-        $username = $jsonData['username'];
-        $password = $jsonData['password'];
+        $username = $requestBody['username'];
+        $password = $requestBody['password'];
 
         // Fetch user from database
         $morders = new ApiModel();
         $result = $morders->get('user', null, ['username' => $username]);
 
         if (!$result['status'] || empty($result['data'])) {
-            return $this->failUnauthorized('User not found');
+            // return $this->failUnauthorized('User not found');
+            $session->setFlashdata('msg', 'User tidak ditemukan');
+            return redirect()->to(base_url('/'));
         }
 
         $userData = $result['data'][0];
 
         // Check if user active
         if ($userData['active'] !== "1") {
-            return $this->failUnauthorized('User belum di restui Admin!');
+            // return $this->failUnauthorized('User belum di restui Admin!');
+            $session->setFlashdata('msg', 'User belum di restui Admin!');
+            return redirect()->to(base_url('/'));
         }
 
         // Verify password
         if ($password !== $userData['password_hash']) {
-            return $this->failUnauthorized('Incorrect password');
+            // return $this->failUnauthorized('Incorrect password');
+            $session->setFlashdata('msg', 'Password salah!');
+            return redirect()->to(base_url('/'));
         }
 
         // Set session data
@@ -59,12 +72,13 @@ class Api extends BaseController
         ];
         $session->set($sessionData);
 
-        $response = [
-            'status' => true,
-            'message' => "Sukses Login",
-            'data' => $sessionData
-        ];
-        return $this->respond($response, 200);
+        // $response = [
+        //     'status' => true,
+        //     'message' => "Sukses Login",
+        //     'data' => $sessionData
+        // ];
+        // return $this->respond($response, 200);
+        return redirect()->to('admin/dashboard');
     }
 
     //insert jika manyertakan id adalah update
@@ -96,11 +110,11 @@ class Api extends BaseController
                     'active' => 'required',
                     'password_hash' => 'required',
                     'usergroup_id' => 'required',
-                    'nomor_telepon' => 'required',                    
+                    'nomor_telepon' => 'required',
                     'jabatan' => 'required',
                     'kantor' => 'required',
                 ]);
-                break;            
+                break;
             case "tiketkategori":
                 // Validasi data
                 $validation->setRules([
@@ -114,12 +128,12 @@ class Api extends BaseController
                     'user_id' => 'required',
                     'tiketkategori_id' => 'required',
                     'status' => 'required',
-                    'prioritas' => 'required',                    
-                    'dibuat_pada' => 'required',
+                    'prioritas' => 'required',
+                    'tgl_buat' => 'required',
                     'deskripsi' => 'required',
-                    'ditugaskan_user_id' => 'required',
+                    'usergroup_id' => 'required',
                     'nama_file' => 'required',
-                    'url_gambar' => 'required'
+                    'img' => 'required'
                 ]);
                 break;
             case "komentar":
@@ -127,8 +141,9 @@ class Api extends BaseController
                 $validation->setRules([
                     'tiket_id' => 'required',
                     'user_id' => 'required',
-                    'dibuat_pada' => 'required|valid_email',
-                    'teks_komentar' => 'required'
+                    'tgl_komen' => 'required',
+                    'komentar' => 'required',
+                    'new_status' => 'required'
                 ]);
                 break;
             default:
@@ -140,7 +155,7 @@ class Api extends BaseController
         if (!$validation->run($data)) {
             return $this->failValidationErrors($validation->getErrors());
         }
-        
+
         // Insert data ke database
         $partnerModel = new ApiModel();
         $result = $partnerModel->insert_table($data, $table, $id);
@@ -201,20 +216,20 @@ class Api extends BaseController
 
         // validasi nama table
         switch ($table) {
-            case "usergroup":                
+            case "usergroup":
                 break;
-            case "user":                
-                break;            
-            case "tiketkategori":                
+            case "user":
                 break;
-            case "tiket":                
+            case "tiketkategori":
                 break;
-            case "komentar":                
+            case "tiket":
+                break;
+            case "komentar":
                 break;
             default:
                 return $this->failServerError('Salah inputan table!');
-        }        
-        
+        }
+
         // Delete data from the database
         $partnerModel = new ApiModel();
         $result = $partnerModel->delete_table($table, $id);
@@ -226,5 +241,4 @@ class Api extends BaseController
             return $this->fail($result);
         }
     }
-
 }

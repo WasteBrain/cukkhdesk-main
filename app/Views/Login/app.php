@@ -55,14 +55,14 @@
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Login</h5>
                     <p class="text-center small">Enter your username & password to login</p><br>
-                    <?php if(session()->getFlashdata('msg')):?>
+                    <?php if (session()->getFlashdata('msg')) : ?>
                       <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
-                    <?php endif;?>
+                    <?php endif; ?>
                   </div>
 
-                  <form class="row g-3 needs-validation" action="/login" method="post" enctype="multipart/form-data" wire:submit.prevent="savePersonalData" onkeydown="return event.key != 'Enter';">
+                  <form class="row g-3 needs-validation" action="/api/login" method="post" enctype="multipart/form-data" wire:submit.prevent="savePersonalData" onkeydown="return event.key != 'Enter';">
 
-                  <div class="col-12">
+                    <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
@@ -76,7 +76,7 @@
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
-                    
+
                     <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" onclick="showPWD()" type="checkbox" name="remember" value="true" id="rememberMe">
@@ -92,9 +92,9 @@
               </div>
 
               <div class="credits">
-                Frontend by <a target="_blank" href="https://www.linkedin.com/in/alexander-alexander-b2ba03152/"> Alex</a>, 
-                Backend by <a href="#">Atot</a>, 
-                Database by <a href="#">Andi</a> 
+                Frontend by <a target="_blank" href="https://www.linkedin.com/in/alexander-alexander-b2ba03152/"> Alex</a>,
+                Backend by <a href="#">Atot</a>,
+                Database by <a href="#">Andi</a>
               </div>
 
             </div>
