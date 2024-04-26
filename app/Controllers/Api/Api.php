@@ -34,9 +34,11 @@ class Api extends BaseController
         $username = $requestBody['username'];
         $password = $requestBody['password'];
 
+        // var_dump($username, $password);
+        // die;
         // Fetch user from database
         $morders = new ApiModel();
-        $result = $morders->get('user', null, ['username' => $username]);
+        $result = $morders->getLog('login_view', null, ['username' => $username]);
 
         if (!$result['status'] || empty($result['data'])) {
             // return $this->failUnauthorized('User not found');
@@ -45,6 +47,8 @@ class Api extends BaseController
         }
 
         $userData = $result['data'][0];
+        // var_dump($userData);
+        // die;
 
         // Check if user active
         if ($userData['active'] !== "1") {
@@ -63,22 +67,24 @@ class Api extends BaseController
         // Set session data
         $session = session();
         $sessionData = [
-            'username'       => $userData['username'],
-            'nama_pengguna'  => $userData['nama_pengguna'],
-            'usergroup_id'   => $userData['usergroup_id'],
-            'nomor_telepon' => $userData['nomor_telepon'],
-            'jabatan'        => $userData['jabatan'],
-            'kantor'         => $userData['kantor'],
+            'username'      => $userData['username'],
+            'nama_pengguna' => $userData['nama_pengguna'],
+            'namagroup_id'  => $userData['namagroup_id'],
+            'nama_group'    => $userData['nama_group'],
+            'kantor'        => $userData['kantor'],
         ];
         $session->set($sessionData);
 
-        // $response = [
-        //     'status' => true,
-        //     'message' => "Sukses Login",
-        //     'data' => $sessionData
-        // ];
-        // return $this->respond($response, 200);
-        return redirect()->to('admin/dashboard');
+        if ($userData['namagroup_id'] == 1) {
+            $session->set('role', 'isAdmin');
+            return redirect()->to('admin/dashboard');
+        } elseif ($userData['namagroup_id'] > 1 && $userData['namagroup_id'] < 7) {
+            $session->set('role', 'isPIC');
+            return redirect()->to('pic/dashboard');
+        } else {
+            $session->set('role', 'isBO');
+            return redirect()->to('bo/dashboard');
+        }
     }
 
     //insert jika manyertakan id adalah update
@@ -96,7 +102,7 @@ class Api extends BaseController
         $table = $jsonData['table'];
 
         switch ($table) {
-            case "usergroup":
+            case "namagroup":
                 // Validasi data
                 $validation->setRules([
                     'nama_group' => 'required'
@@ -109,10 +115,23 @@ class Api extends BaseController
                     'username' => 'required',
                     'active' => 'required',
                     'password_hash' => 'required',
-                    'usergroup_id' => 'required',
                     'nomor_telepon' => 'required',
                     'jabatan' => 'required',
                     'kantor' => 'required',
+                ]);
+                break;
+            case "usergroup":
+                // Validasi data
+                $validation->setRules([
+                    'user_id' => 'required',
+                    'namagroup_id' => 'required'
+                ]);
+                break;
+            case "tiketgroup":
+                // Validasi data
+                $validation->setRules([
+                    'tiketkategori_id' => 'required',
+                    'namagroup_id' => 'required'
                 ]);
                 break;
             case "tiketkategori":
