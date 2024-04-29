@@ -32,7 +32,7 @@
 </head>
 
 <body>
-    <?= $this->include('AFI/Structure/header'); ?>
+    <?= $this->include('Validators/Structure/header'); ?>
 <main id="main" class="main">
 
     <div class="pagetitle">
@@ -40,7 +40,7 @@
         <nav>
             <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?= base_url('afi/dashboard') ?>">Home</a></li>
-            <li class="breadcrumb-item active">Authorized Ticket</li>
+            <li class="breadcrumb-item active">Rejected Ticket</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -53,7 +53,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Ticket list</h5>
 
-                        <table class="table table-borderless datatable">
+                        <table id="exportedTable" class="table table-borderless datatable">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -62,41 +62,40 @@
                                     <th scope="col">Date Submitted</th>
                                     <th scope="col">Admin Note</th>
                                     <th scope="col">Result</th>
-                                    <th scope="col">Approval Date</th>
+                                    <th scope="col">Rejection Date</th>
                                     <th scope="col">My Note</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                
         <tr>
             <td>1</td>
             <td>New York</td>
             <td>Withdrawal of savings on inter-office transfers</td>
             <td>2024-04-18</td>
-            <td>Checked account balance.</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
-            <td>2024-04-17</td>
-            <td>Transfer completed successfully.</td>
+            <td>Investigated transaction history.</td>
+            <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Rejected</span></td>
+            <td>2024-04-20</td>
+            <td>Insufficient funds in the sender's account.</td>
         </tr>
         <tr>
             <td>2</td>
             <td>Los Angeles</td>
             <td>Withdrawal of savings on inter-office transfers</td>
             <td>2024-04-17</td>
-            <td>Checked account balance.</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
-            <td>2024-04-17</td>
-            <td>Transfer completed successfully.</td>
+            <td>Investigated transaction history.</td>
+            <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Rejected</span></td>
+            <td>2024-04-19</td>
+            <td>Incorrect recipient account number.</td>
         </tr>
         <tr>
             <td>3</td>
             <td>Chicago</td>
             <td>Withdrawal of savings on inter-office transfers</td>
             <td>2024-04-16</td>
-            <td>Checked account balance.</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
-            <td>2024-04-17</td>
-            <td>Transfer completed successfully.</td>
+            <td>Investigated transaction history.</td>
+            <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Rejected</span></td>
+            <td>2024-04-18</td>
+            <td>Unauthorized transaction.</td>
         </tr>
         <tr>
             <td>4</td>
@@ -104,9 +103,9 @@
             <td>Withdrawal of savings on inter-office transfers</td>
             <td>2024-04-15</td>
             <td>Checked account balance.</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Rejected</span></td>
             <td>2024-04-17</td>
-            <td>Transfer completed successfully.</td>
+            <td>Recipient account closed.</td>
         </tr>
         <tr>
             <td>5</td>
@@ -114,9 +113,9 @@
             <td>Withdrawal of savings on inter-office transfers</td>
             <td>2024-04-14</td>
             <td>Investigated transaction history.</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Rejected</span></td>
             <td>2024-04-16</td>
-            <td>No issues found.</td>
+            <td>Policy violation.</td>
         </tr>
         <tr>
             <td>6</td>
@@ -124,9 +123,9 @@
             <td>Withdrawal of savings on inter-office transfers</td>
             <td>2024-04-13</td>
             <td>Reviewed account details.</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Rejected</span></td>
             <td>2024-04-15</td>
-            <td>Insufficient funds.</td>
+            <td>Unverified recipient identity.</td>
         </tr>
         <tr>
             <td>7</td>
@@ -134,9 +133,9 @@
             <td>Withdrawal of savings on inter-office transfers</td>
             <td>2024-04-12</td>
             <td>Verified recipient account.</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Rejected</span></td>
             <td>2024-04-14</td>
-            <td>Transfer completed.</td>
+            <td>Transaction flagged as fraudulent.</td>
         </tr>
         <tr>
             <td>8</td>
@@ -144,9 +143,9 @@
             <td>Withdrawal of savings on inter-office transfers</td>
             <td>2024-04-11</td>
             <td>Checked transfer limits.</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Rejected</span></td>
             <td>2024-04-13</td>
-            <td>Within authorized limits.</td>
+            <td>Recipient account on hold.</td>
         </tr>
         <tr>
             <td>9</td>
@@ -154,9 +153,9 @@
             <td>Withdrawal of savings on inter-office transfers</td>
             <td>2024-04-10</td>
             <td>Verified transaction details.</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Rejected</span></td>
             <td>2024-04-12</td>
-            <td>Incorrect account number.</td>
+            <td>Transaction amount exceeds limit.</td>
         </tr>
         <tr>
             <td>10</td>
@@ -164,9 +163,9 @@
             <td>Withdrawal of savings on inter-office transfers</td>
             <td>2024-04-09</td>
             <td>Confirmed sender identity.</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Rejected</span></td>
             <td>2024-04-11</td>
-            <td>Transfer initiated.</td>
+            <td>Invalid transaction request.</td>
         </tr>
         <tr>
             <td>11</td>
@@ -174,9 +173,9 @@
             <td>Withdrawal of savings on inter-office transfers</td>
             <td>2024-04-08</td>
             <td>Reviewed transfer request.</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Rejected</span></td>
             <td>2024-04-10</td>
-            <td>Transfer completed.</td>
+            <td>Recipient account frozen.</td>
         </tr>
         <tr>
             <td>12</td>
@@ -184,11 +183,11 @@
             <td>Withdrawal of savings on inter-office transfers</td>
             <td>2024-04-07</td>
             <td>Checked transaction history.</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Rejected</span></td>
             <td>2024-04-09</td>
             <td>Transaction suspicious.</td>
         </tr>
-                            </tbody>
+    </tbody>
                         </table>
 
                     </div>
@@ -199,7 +198,7 @@
 
 </main><!-- End #main -->
 
-<?= $this->include('AFI/Structure/footer'); ?>
+<?= $this->include('Validators/Structure/footer'); ?>
   <!-- Vendor JS Files -->
   <script src="<?php echo base_url(); ?>assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

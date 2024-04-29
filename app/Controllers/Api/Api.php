@@ -81,6 +81,9 @@ class Api extends BaseController
         } elseif ($userData['namagroup_id'] > 1 && $userData['namagroup_id'] < 7) {
             $session->set('role', 'isPIC');
             return redirect()->to('pic/dashboard');
+        } elseif ($userData['namagroup_id'] > 6 && $userData['namagroup_id'] < 11) {
+            $session->set('role', 'isVal');
+            return redirect()->to('validators/dashboard');
         } else {
             $session->set('role', 'isBO');
             return redirect()->to('bo/dashboard');

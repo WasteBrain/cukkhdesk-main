@@ -284,7 +284,7 @@
 
 </main><!-- End #main -->
 
-    <?= $this->include('CCD/Structure/footer'); ?>
+    <?= $this->include('PIC/HARDWARE/Structure/footer'); ?>
   <!-- Vendor JS Files -->
   <script src="<?php echo base_url(); ?>assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

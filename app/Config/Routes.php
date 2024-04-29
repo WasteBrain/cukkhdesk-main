@@ -30,7 +30,7 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Front\Admin'], static f
     }
 });
 
-$routes->group('pic', ['namespace' => 'App\Controllers\Front\PIC\HARDWARE'], static function ($routes) {
+$routes->group('pic', ['namespace' => 'App\Controllers\Front\PIC'], static function ($routes) {
     if (session()->get('role') === 'isPIC') {
         $routes->get('dashboard', 'Kontrol::index');
         $routes->get('onholdticket', 'Kontrol::onhold');
@@ -43,11 +43,17 @@ $routes->group('pic', ['namespace' => 'App\Controllers\Front\PIC\HARDWARE'], sta
     }
 });
 
-$routes->group('validators', ['namespace' => 'App\Controllers\Front\AFI'], static function ($routes) {
-    $routes->get('dashboard', 'Kontrol::index');
-    $routes->get('onholdticket', 'Kontrol::onholdticket');
-    $routes->get('otoritizedticket', 'Kontrol::otoritizedticket');
-    $routes->get('rejectedticket', 'Kontrol::rejectedticket');
+$routes->group('validators', ['namespace' => 'App\Controllers\Front\validators'], static function ($routes) {
+    if (session()->get('role') === 'isVal') {
+        $routes->get('dashboard', 'Kontrol::index');
+        $routes->get('onholdticket', 'Kontrol::onholdticket');
+        $routes->get('otoritizedticket', 'Kontrol::otoritizedticket');
+        $routes->get('rejectedticket', 'Kontrol::rejectedticket');
+    } else {
+        $routes->get('(.*)', function () {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        });
+    }    
 });
 
 $routes->group('bo', ['namespace' => 'App\Controllers\Front\BO'], static function ($routes) {

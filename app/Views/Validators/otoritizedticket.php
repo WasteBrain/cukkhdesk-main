@@ -32,15 +32,15 @@
 </head>
 
 <body>
-    <?= $this->include('PIC/ATM/Structure/header'); ?>
+    <?= $this->include('Validators/Structure/header'); ?>
 <main id="main" class="main">
 
     <div class="pagetitle">
         <h1>Ticket</h1>
         <nav>
             <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?= base_url('atm/dashboard') ?>">Home</a></li>
-            <li class="breadcrumb-item active">Resolved Ticket</li>
+            <li class="breadcrumb-item"><a href="<?= base_url('afi/dashboard') ?>">Home</a></li>
+            <li class="breadcrumb-item active">Authorized Ticket</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -59,9 +59,10 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Branch Office</th>
                                     <th scope="col">Problem Description</th>
-                                    <th scope="col">Start Working at</th>
-                                    <th scope="col">Finish Working at</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Date Submitted</th>
+                                    <th scope="col">Admin Note</th>
+                                    <th scope="col">Result</th>
+                                    <th scope="col">Approval Date</th>
                                     <th scope="col">My Note</th>
                                 </tr>
                             </thead>
@@ -70,110 +71,122 @@
         <tr>
             <td>1</td>
             <td>New York</td>
-            <td>ATM Error</td>
-            <td>2024-04-17 04:04:04 PM</td>
-            <td>2024-04-18 09:04:04 AM</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-            <td>Completed successfully.</td>
+            <td>Withdrawal of savings on inter-office transfers</td>
+            <td>2024-04-18</td>
+            <td>Checked account balance.</td>
+            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td>2024-04-17</td>
+            <td>Transfer completed successfully.</td>
         </tr>
         <tr>
             <td>2</td>
             <td>Los Angeles</td>
-            <td>ATM Error</td>
-            <td>2024-04-17 04:04:04 PM</td>
-            <td>2024-04-18 09:04:04 AM</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-            <td>Completed successfully.</td>
+            <td>Withdrawal of savings on inter-office transfers</td>
+            <td>2024-04-17</td>
+            <td>Checked account balance.</td>
+            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td>2024-04-17</td>
+            <td>Transfer completed successfully.</td>
         </tr>
         <tr>
             <td>3</td>
             <td>Chicago</td>
-            <td>ATM Error</td>
-            <td>2024-04-17 04:04:04 PM</td>
-            <td>2024-04-18 09:04:04 AM</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-            <td>Completed successfully.</td>
+            <td>Withdrawal of savings on inter-office transfers</td>
+            <td>2024-04-16</td>
+            <td>Checked account balance.</td>
+            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td>2024-04-17</td>
+            <td>Transfer completed successfully.</td>
         </tr>
         <tr>
             <td>4</td>
             <td>San Francisco</td>
-            <td>ATM Error</td>
-            <td>2024-04-17 04:04:04 PM</td>
-            <td>2024-04-18 09:04:04 AM</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-            <td>Completed successfully.</td>
+            <td>Withdrawal of savings on inter-office transfers</td>
+            <td>2024-04-15</td>
+            <td>Checked account balance.</td>
+            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td>2024-04-17</td>
+            <td>Transfer completed successfully.</td>
         </tr>
         <tr>
             <td>5</td>
             <td>Miami</td>
-            <td>ATM Error</td>
-            <td>2024-04-17 04:04:04 PM</td>
-            <td>2024-04-18 09:04:04 AM</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-            <td>Completed successfully.</td>
+            <td>Withdrawal of savings on inter-office transfers</td>
+            <td>2024-04-14</td>
+            <td>Investigated transaction history.</td>
+            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td>2024-04-16</td>
+            <td>No issues found.</td>
         </tr>
         <tr>
             <td>6</td>
             <td>Houston</td>
-            <td>ATM Error</td>
-            <td>2024-04-17 04:04:04 PM</td>
-            <td>2024-04-18 09:04:04 AM</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-            <td>Completed successfully.</td>
+            <td>Withdrawal of savings on inter-office transfers</td>
+            <td>2024-04-13</td>
+            <td>Reviewed account details.</td>
+            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td>2024-04-15</td>
+            <td>Insufficient funds.</td>
         </tr>
         <tr>
             <td>7</td>
             <td>Seattle</td>
-            <td>ATM Error</td>
-            <td>2024-04-17 04:04:04 PM</td>
-            <td>2024-04-18 09:04:04 AM</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-            <td>Completed successfully.</td>
+            <td>Withdrawal of savings on inter-office transfers</td>
+            <td>2024-04-12</td>
+            <td>Verified recipient account.</td>
+            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td>2024-04-14</td>
+            <td>Transfer completed.</td>
         </tr>
         <tr>
             <td>8</td>
             <td>Atlanta</td>
-            <td>ATM Error</td>
-            <td>2024-04-17 04:04:04 PM</td>
-            <td>2024-04-18 09:04:04 AM</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-            <td>Completed successfully.</td>
+            <td>Withdrawal of savings on inter-office transfers</td>
+            <td>2024-04-11</td>
+            <td>Checked transfer limits.</td>
+            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td>2024-04-13</td>
+            <td>Within authorized limits.</td>
         </tr>
         <tr>
             <td>9</td>
             <td>Boston</td>
-            <td>ATM Error</td>
-            <td>2024-04-17 04:04:04 PM</td>
-            <td>2024-04-18 09:04:04 AM</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-            <td>Completed successfully.</td>
+            <td>Withdrawal of savings on inter-office transfers</td>
+            <td>2024-04-10</td>
+            <td>Verified transaction details.</td>
+            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td>2024-04-12</td>
+            <td>Incorrect account number.</td>
         </tr>
         <tr>
             <td>10</td>
             <td>Dallas</td>
-            <td>ATM Error</td>
-            <td>2024-04-17 04:04:04 PM</td>
-            <td>2024-04-18 09:04:04 AM</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-            <td>Completed successfully.</td>
+            <td>Withdrawal of savings on inter-office transfers</td>
+            <td>2024-04-09</td>
+            <td>Confirmed sender identity.</td>
+            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td>2024-04-11</td>
+            <td>Transfer initiated.</td>
         </tr>
         <tr>
             <td>11</td>
             <td>Philadelphia</td>
-            <td>ATM Error</td>
-            <td>2024-04-17 04:04:04 PM</td>
-            <td>2024-04-18 09:04:04 AM</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-            <td>Completed successfully.</td>
+            <td>Withdrawal of savings on inter-office transfers</td>
+            <td>2024-04-08</td>
+            <td>Reviewed transfer request.</td>
+            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td>2024-04-10</td>
+            <td>Transfer completed.</td>
         </tr>
         <tr>
             <td>12</td>
             <td>Washington</td>
-            <td>ATM Error</td>
-            <td>2024-04-17 04:04:04 PM</td>
-            <td>2024-04-18 09:04:04 AM</td>
-            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
-            <td>Completed successfully.</td>
+            <td>Withdrawal of savings on inter-office transfers</td>
+            <td>2024-04-07</td>
+            <td>Checked transaction history.</td>
+            <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Approved</span></td>
+            <td>2024-04-09</td>
+            <td>Transaction suspicious.</td>
         </tr>
                             </tbody>
                         </table>
@@ -186,7 +199,7 @@
 
 </main><!-- End #main -->
 
-<?= $this->include('CCD/Structure/footer'); ?>
+<?= $this->include('Validators/Structure/footer'); ?>
   <!-- Vendor JS Files -->
   <script src="<?php echo base_url(); ?>assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

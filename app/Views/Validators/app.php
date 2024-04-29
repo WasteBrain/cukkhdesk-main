@@ -33,7 +33,7 @@
 
 <body>
 
-    <?= $this->include('PIC/ATM/Structure/header'); ?>
+    <?= $this->include('Validators/Structure/header'); ?>
 
 <main id="main" class="main">
 
@@ -53,12 +53,13 @@
     <!-- Left side columns -->
     <div class="col-lg-12">
       <div class="row">
+
         <!-- Sales Card -->
-        <div class="col-xxl-4 col-md-6">
+        <div class="col-xxl-4 col-md-4">
           <div class="card info-card sales-card">
 
             <div class="card-body">
-              <h5 class="card-title">Ticket Masuk <span>| This Month</span></h5>
+              <h5 class="card-title">Tickets <span>| This Month</span></h5>
 
               <div class="d-flex align-items-center">
                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -76,18 +77,18 @@
         </div><!-- End Sales Card -->
 
         <!-- Sales Card -->
-        <div class="col-xxl-4 col-md-6">
+        <div class="col-xxl-4 col-md-4">
           <div class="card info-card sales-card">
 
             <div class="card-body">
-              <h5 class="card-title">Ticket Diperbaiki<span>| This Month</span></h5>
+              <h5 class="card-title">Authorized <span>| This Month</span></h5>
 
               <div class="d-flex align-items-center">
                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                   <i class="bi bi-tools"></i>
                 </div>
                 <div class="ps-3">
-                  <h6>120</h6>
+                  <h6>140</h6>
                   <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
 
                 </div>
@@ -96,19 +97,20 @@
 
           </div>
         </div><!-- End Sales Card -->
+
         <!-- Sales Card -->
-        <div class="col-xxl-4 col-md-6">
+        <div class="col-xxl-4 col-md-4">
           <div class="card info-card sales-card">
 
             <div class="card-body">
-              <h5 class="card-title">Rata-rata Durasi On Hold <span>| This Month</span></h5>
+              <h5 class="card-title">Rejected <span>| This Month</span></h5>
 
               <div class="d-flex align-items-center">
                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                  <i class="bi bi-alarm-fill"></i>
+                  <i class="bi bi-tools"></i>
                 </div>
                 <div class="ps-3">
-                  <h6>2 Hr 5 Min 4 Sec</h6>
+                  <h6>5</h6>
                   <span class="text-success small pt-1 fw-bold">2%</span> <span class="text-muted small pt-2 ps-1">lessen</span>
 
                 </div>
@@ -117,128 +119,37 @@
 
           </div>
         </div><!-- End Sales Card -->
-        <!-- Sales Card -->
-        <div class="col-xxl-4 col-md-6">
-          <div class="card info-card sales-card">
-
-            <div class="card-body">
-              <h5 class="card-title">Rata-rata Durasi Perbaikan <span>| This Month</span></h5>
-
-              <div class="d-flex align-items-center">
-                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                  <i class="bi bi-alarm-fill"></i>
-                </div>
-                <div class="ps-3">
-                  <h6>5 Min 4 Sec</h6>
-                  <span class="text-success small pt-1 fw-bold">2%</span> <span class="text-muted small pt-2 ps-1">lessen</span>
-
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div><!-- End Sales Card -->
-        <!-- Reports -->
-        <div class="col-12">
-          <div class="card">
-
-            <div class="card-body">
-              <h5 class="card-title">Reports <span>/This Month</span></h5>
-
-              <!-- Line Chart -->
-              <div id="reportsChart"></div>
-
-              <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                  new ApexCharts(document.querySelector("#reportsChart"), {
-                    series: [{
-                      name: 'Jumlah Ticket',
-                      data: [31, 40, 28, 51, 42, 82, 56],
-                    }, {
-                      name: 'On Hold',
-                      data: [11, 32, 45, 32, 34, 52, 41]
-                    }, {
-                      name: 'In Progress',
-                      data: [10, 8, 5, 10, 9, 10, 11]
-                    }, {
-                      name: 'Resolved',
-                      data: [5, 4, 3, 8, 5, 4, 9]
-                    }],
-                    chart: {
-                      height: 350,
-                      type: 'area',
-                      toolbar: {
-                        show: false
-                      },
-                    },
-                    markers: {
-                      size: 4
-                    },
-                    colors: ['#ff231d' , '#ffff00','#4154f1', '#2eca6a' ],
-                    fill: {
-                      type: "gradient",
-                      gradient: {
-                        shadeIntensity: 1,
-                        opacityFrom: 0.3,
-                        opacityTo: 0.4,
-                        stops: [0, 90, 100]
-                      }
-                    },
-                    dataLabels: {
-                      enabled: false
-                    },
-                    stroke: {
-                      curve: 'smooth',
-                      width: 2
-                    },xaxis: {
-                        type: 'category',
-                        categories: ["2018-09-01", "2018-09-02", "2018-09-5","2018-09-9","2018-09-11", "2018-09-16", "2018-09-19", "2018-09-25", "2018-09-30"]
-                    },
-                    tooltip: {
-                      x: {
-                        format: 'dd/MM/yy HH:mm'
-                      },
-                    }
-                  }).render();
-                });
-              </script>
-              <!-- End Line Chart -->
-
-            </div>
-
-          </div>
-        </div><!-- End Reports -->
         <!-- Recent Sales -->
         <div class="col-12">
           <div class="card recent-sales overflow-auto">
 
             <div class="card-body">
-              <h5 class="card-title">Ticket Terbaru<span></span></h5>
+              <h5 class="card-title">Recent Ticket <span></span></h5>
 
               <table class="table table-borderless datatable">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Branch Office</th>
-                    <th scope="col">Deskripsi Masalah</th>
+                    <th scope="col">Problem Description</th>
                     <th scope="col">File</th>
-                    <th scope="col">Tanggal Masuk</th>
+                    <th scope="col">Date Submitted</th>
                     <th scope="col">Status</th>
                   </tr>
                 </thead>
                 <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Putussibau</td>
-                                    <td>ATM Error</td>
+                                    <td>Badau</td>
+                                    <td>Withdrawal of savings on inter-office transfers</td>
                                     <td><a href="file1.pdf">file1.pdf</a></td>
                                     <td>2024-04-18</td>
                                     <td><span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>On Hold</span></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Kantor Sentral</td>
-                                    <td>ATM Error</td>
+                                    <td>Lanjak</td>
+                                    <td>Withdrawal of savings on inter-office transfers</td>
                                     <td><a href="file2.docx">file2.docx</a></td>
                                     <td>2024-04-17</td>
                                     <td><span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>On Hold</span></td>
@@ -246,26 +157,26 @@
                                 <tr>
                                     <td>3</td>
                                     <td>Rumah Sepan</td>
-                                    <td>ATM Error</td>
+                                    <td>Withdrawal of savings on inter-office transfers</td>
                                     <td><a href="file3.jpg">file3.jpg</a></td>
                                     <td>2024-04-16</td>
-                                    <td><span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>In Progress</span></td>
+                                    <td><span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>On Hold</span></td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
-                                    <td>Rumah Punyung</td>
-                                    <td>ATM Error</td>
+                                    <td>Nanga Mau</td>
+                                    <td>Withdrawal of savings on inter-office transfers</td>
                                     <td><a href="file4.pdf">file4.pdf</a></td>
                                     <td>2024-04-15</td>
-                                    <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
+                                    <td><span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>On Hold</span></td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
-                                    <td>SImpang Pinoh</td>
-                                    <td>ATM Error</td>
+                                    <td>Merakai</td>
+                                    <td>Withdrawal of savings on inter-office transfers</td>
                                     <td><a href="file5.txt">file5.txt</a></td>
                                     <td>2024-04-14</td>
-                                    <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Resolved</span></td>
+                                    <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Authorized</span></td>
                                 </tr>
                 </tbody>
               </table>
@@ -284,7 +195,7 @@
 
 </main><!-- End #main -->
 
-    <?= $this->include('CCD/Structure/footer'); ?>
+    <?= $this->include('Validators/Structure/footer'); ?>
   <!-- Vendor JS Files -->
   <script src="<?php echo base_url(); ?>assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
