@@ -153,7 +153,6 @@ class Api extends BaseController
                     'prioritas' => 'required',
                     'tgl_buat' => 'required',
                     'deskripsi' => 'required',
-                    'usergroup_id' => 'required',
                     'nama_file' => 'required',
                     'img' => 'required'
                 ]);

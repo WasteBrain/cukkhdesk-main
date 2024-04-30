@@ -30,6 +30,16 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Front\Admin'], static f
     }
 });
 
+$routes->group('admin/data', ['namespace' => 'App\Controllers\Front\Admin'], static function ($routes) {
+    if (session()->get('role') === 'isAdmin') {
+        $routes->get('newtiket', 'Data::newTiket');
+    } else {
+        $routes->get('(.*)', function () {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        });
+    }
+});
+
 $routes->group('pic', ['namespace' => 'App\Controllers\Front\PIC'], static function ($routes) {
     if (session()->get('role') === 'isPIC') {
         $routes->get('dashboard', 'Kontrol::index');
@@ -53,7 +63,7 @@ $routes->group('validators', ['namespace' => 'App\Controllers\Front\validators']
         $routes->get('(.*)', function () {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         });
-    }    
+    }
 });
 
 $routes->group('bo', ['namespace' => 'App\Controllers\Front\BO'], static function ($routes) {
