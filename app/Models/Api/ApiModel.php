@@ -61,7 +61,7 @@ class ApiModel extends Model
         }
     }
 
-    public function get($table, $id = null, $where = [])
+    public function get($table, $field = null, $value = null, $id = null)
     {
         $db = \Config\Database::connect();
 
@@ -72,8 +72,8 @@ class ApiModel extends Model
                 $query->where($table . '_id', $id);
             }
 
-            if (!empty($where)) {
-                $query->where($where);
+            if ($field !== null && $value !== null) {
+                $query->where($field, $value);
             }
 
             $result = $query->get()->getResultArray();
@@ -95,6 +95,7 @@ class ApiModel extends Model
             return [
                 'status' => false,
                 'message' => $e->getMessage(),
+                'lastQuery' => $this->db->getLastQuery()->getQuery(),
                 'data' => null
             ];
         }

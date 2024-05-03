@@ -205,11 +205,16 @@ class Api extends BaseController
 
         // menyimpan data kiriman ke dalam variable
         $table = $jsonData['table'];
+        $field = isset($jsonData['field']) && !empty($jsonData['field']) ? $jsonData['field'] : null;
+        $value = isset($jsonData['value']) && !empty($jsonData['value']) ? $jsonData['value'] : null;
         $id = isset($jsonData['id']) && !empty($jsonData['id']) ? (int)$jsonData['id'] : null;
+
+        // var_dump($field, $value);
+        // die;
 
         // inisialisasi model dan ambil data dari database
         $morders = new ApiModel();
-        $result = $morders->get($table, $id);
+        $result = $morders->get($table, $field, $value, $id);
 
         // pengiriman response 
         if ($result['status'] === true) {
