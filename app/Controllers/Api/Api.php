@@ -114,6 +114,7 @@ class Api extends BaseController
             case "user":
                 // Validasi data
                 $validation->setRules([
+                    'namagroup_id' => 'required',
                     'nama_pengguna' => 'required',
                     'username' => 'required',
                     'active' => 'required',
@@ -122,14 +123,7 @@ class Api extends BaseController
                     'jabatan' => 'required',
                     'kantor' => 'required',
                 ]);
-                break;
-            case "usergroup":
-                // Validasi data
-                $validation->setRules([
-                    'user_id' => 'required',
-                    'namagroup_id' => 'required'
-                ]);
-                break;
+                break;            
             case "tiketgroup":
                 // Validasi data
                 $validation->setRules([
