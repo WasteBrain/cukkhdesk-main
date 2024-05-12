@@ -44,12 +44,25 @@ class Admin extends Model
     {
     }
 
-    public function tiketSubmited()
+    public function tiketSubmited($status)
     {
         $db = \Config\Database::connect();
         $query = $db->table('new_tiket_view');
-        $query->where('status', 1);
+        $query->where('status', $status);
         $result = $query->get()->getResultArray();
         return $result;
+    }
+
+    public function changeStatus($id, $status)
+    {
+        $db = \Config\Database::connect();
+
+        $query = $db->table('tiket')->where('tiket_id', $id)->update(['status' => $status]);
+
+        if ($query) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -13,10 +13,10 @@ class Data extends BaseController
         //
     }
 
-    public function newTiket()
+    public function tiket($status)
     {
         $morders = new Admin();
-        $data = $morders->tiketSubmited();
+        $data = $morders->tiketSubmited($status);
 
         $i = 1;
         $row = array();
@@ -33,5 +33,14 @@ class Data extends BaseController
             $row[] = $rows;
         }
         echo json_encode($row);
+    }
+
+    public function changeStatus($id, $status)
+    {
+        $morders = new Admin();
+        $hasil = $morders->changeStatus($id, $status);
+        if ($hasil !== true) {
+            echo json_encode("no!");
+        }
     }
 }
