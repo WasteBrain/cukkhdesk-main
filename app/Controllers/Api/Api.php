@@ -51,7 +51,7 @@ class Api extends BaseController
         // die;
 
         // Check if user active
-        if ($userData['active'] !== "1") {
+        if ($userData['active'] !== "2") {
             // return $this->failUnauthorized('User belum di restui Admin!');
             $session->setFlashdata('msg', 'User belum di restui Admin!');
             return redirect()->to(base_url('/'));
@@ -123,7 +123,7 @@ class Api extends BaseController
                     'jabatan' => 'required',
                     'kantor' => 'required',
                 ]);
-                break;            
+                break;
             case "tiketgroup":
                 // Validasi data
                 $validation->setRules([

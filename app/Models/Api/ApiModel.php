@@ -6,6 +6,7 @@ use CodeIgniter\Model;
 
 class ApiModel extends Model
 {
+
     public function getLog($table, $id = null, $where = [])
     {
         $db = \Config\Database::connect();

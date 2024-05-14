@@ -5,13 +5,47 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+
 $routes->get('/', 'Home::index');
 $routes->post('/login', 'Home::login');
 $routes->get('/logout', 'Home::logout');
 
 $routes->group('api', ['namespace' => 'App\Controllers\Api'], static function ($routes) {
     $routes->post('login', 'Api::login');
+
+    /**
+     * transaksi insert data ke table manapun menggunakan 
+     * route api/insert dengan format
+     *  {
+     *      "table":"nama table",
+     *      "id":"",
+     *      "data":[
+     *          {           
+     *             "field1":"value",
+     *             "field2":"value",
+     *             "field3":"value"
+     *          }
+     *      ]
+     *  }
+     * untuk insert ke table manapun, sertakan nama table di key "table", sedangkan key "data" adalah nama firld table yang akan diiskan
+     * jika key "id" terisi, maka prosesnya adalah update table 
+     */
     $routes->post('insert', 'Api::insert');
+
+    /**
+     * transaksi data menggunakan routes API
+     * select data unutk ditampilkan di datatable, halaman manapun menggunakan 
+     * api/get dengan format
+     * {
+     *   "table":"",
+     *   "field":"",
+     *   "value":"",
+     *   "id":""
+     * }
+     * tidak boleh kosong parameter 'table' diisi untuk mengambil data dari table mana, 
+     * jika field terisi, hrus berserta value, ini adalah select where 'field' = 'value'
+     * jika hanya table dan id yg diisi, maka ini adalah select where id = 'id'
+     */
     $routes->get('get', 'Api::get');
     $routes->delete('delete', 'Api::delete');
 });
@@ -23,28 +57,6 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Front\Admin'], static f
         $routes->get('ticketprogress', 'Kontrol::ticketprogress');
         $routes->get('ticketdone', 'Kontrol::ticketdone');
         $routes->get('rejectedticket', 'Kontrol::rejectedticket');
-    } else {
-        $routes->get('(.*)', function () {
-            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
-        });
-    }
-});
-
-// admin menu angka terakir adalah status tiket
-// 1 di inputkan
-// 2 dicek
-// 3 diterima
-// 4 dikerjakan
-// 5 selesai normal
-// 6 selesai dengan catatan
-// 7 ditolak
-$routes->group('admin/data', ['namespace' => 'App\Controllers\Front\Admin'], static function ($routes) {
-    if (session()->get('role') === 'isAdmin') {
-        // route ini harusnya di hit ajax request, pada $(document).ready(funtion)(){}), unutk menampilkan data tiket2 yg baru diinputkan, untuk mempopulasi datatable admin di menu "submited", status yg di hit adalah 1        
-        // *** route ambil dat table menggunakan api/get *** //
-
-        // pada menu "submited" datatable akan ada tombol mata, fungsingnya unutk mengirimkan value status setelah parameter ID tiket, ini unutk merubah status tiket dari 1 ke 2
-        $routes->get('status/(:num)/(:num)', 'Data::changeStatus/$1/$2');
     } else {
         $routes->get('(.*)', function () {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
