@@ -1,6 +1,6 @@
 /**
 * Template Name: NiceAdmin
-* Updated: May 30 2023 with Bootstrap v5.3.0
+* Updated: Jan 29 2024 with Bootstrap v5.3.2
 * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
@@ -299,10 +299,26 @@
   /**
    * Initiate Datatables
    */
-  const datatables = select('.datatable', true)
-  datatables.forEach(datatable => {
-    new simpleDatatables.DataTable(datatable);
-  })
+  // const datatables = select('.datatable', true)
+  // datatables.forEach(datatable => {
+  //   new simpleDatatables.DataTable(datatable, {
+  //     perPageSelect: [5, 10, 15, ["All", -1]],
+  //     columns: [{
+  //         select: 2,
+  //         sortSequence: ["desc", "asc"]
+  //       },
+  //       {
+  //         select: 3,
+  //         sortSequence: ["desc"]
+  //       },
+  //       {
+  //         select: 4,
+  //         cellClass: "green",
+  //         headerClass: "red"
+  //       }
+  //     ]
+  //   });
+  // })
 
   /**
    * Autoresize echart charts
