@@ -29,7 +29,7 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="#">
                 <i class="bi bi-person"></i>
-                <span>My Profile</span>
+                <span>Profile Saya</span>
               </a>
             </li>
             <li>
@@ -41,7 +41,7 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="#">
                 <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
+                <span>Log Out</span>
               </a>
             </li>
 
@@ -67,21 +67,21 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?= base_url('bo/newticket') ?>">
             <i class="bi bi-chat-dots-fill"></i>
-            <span>New Ticket</span>
+            <span>Tiket Baru</span>
             </a>
         </li><!-- End New Ticket Page Nav -->
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?= base_url('bo/myticket') ?>">
             <i class="bi bi-check-square-fill"></i>
-            <span>My Ticket</span>
+            <span>Tiket Saya</span>
             </a>
         </li><!-- End List Ticket Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="<?= base_url('bo/myticket') ?>">
+            <a class="nav-link collapsed" href="<?= base_url('bo/tentang') ?>">
             <i class="bi bi-info-square-fill"></i>
-            <span>About</span>
+            <span>Tentang</span>
             </a>
         </li><!-- End About Page Nav -->
 

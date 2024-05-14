@@ -32,15 +32,15 @@
 </head>
 
 <body>
-    <?= $this->include('BO/Structure/header'); ?>
+    <?= $this->include('Admin/Structure/header'); ?>
 <main id="main" class="main">
 
     <div class="pagetitle">
         <h1>Tiket</h1>
         <nav>
             <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?= base_url('bo/dashboard') ?>">Home</a></li>
-            <li class="breadcrumb-item active">Tiket Baru</li>
+            <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard') ?>">Home</a></li>
+            <li class="breadcrumb-item active">Tiket Baru - Manual Input</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -68,6 +68,12 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
+                                <label for="inputName" class="col-sm-4 col-form-label">Branch office</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" name="inputName" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
                                 <label for="inputProblem" class="col-sm-4 col-form-label">Deskripsi Persoalan</label>
                                 <div class="col-sm-8">
                                     <textarea class="form-control" name="inputProblem" style="height: 100px;" required></textarea>
@@ -79,6 +85,63 @@
                                     <input type='file' class="form-control" name="inputFile" id="fileInput" required>
                                 </div>
                             </div>
+                            <hr>
+                            
+                            <div class="row mb-3">
+                                <label class="col-sm-4 col-form-label">Tanggal Masuk</label>
+                                <div class="col-sm-8"> <input type="text" class="form-control" name="dateSubmitted"> </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-4 col-form-label">Kategori</label>
+                                <div class="col-sm-8">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="1">Software</option>
+                                        <option value="2">Hardware</option>
+                                        <option value="3">Networking</option>
+                                        <option value="4">ATM</option>
+                                        <option value="5">KKD</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-4 col-form-label">Otoritas Dept</label>
+                                <div class="col-sm-8">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="1">AFI</option>
+                                        <option value="2">CCD</option>
+                                        <option value="3">RISK</option>
+                                        <option value="3">IT</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-4 col-form-label">Teknisi</label>
+                                <div class="col-sm-8">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="1">ANDI</option>
+                                        <option value="2">HENDRO</option>
+                                        <option value="3">EGO</option>
+                                        <option value="4">RIO</option>
+                                        <option value="5">INDRA</option>
+                                        <option value="6">CIKA</option>
+                                        <option value="7">ANDI</option>
+                                        <option value="8">TENDO</option>
+                                        <option value="9">ABET</option>
+                                        <option value="10">YANTO</option>
+                                        <option value="11">RIDWAN</option>
+                                        <option value="12">EVAN</option>
+                                        <option value="13">CANDRA</option>
+                                        <option value="14">ATOT</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-4 col-form-label">Catatan</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" name="inputnote" style="height: 100px;"></textarea>
+                                </div>
+                            </div>  
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>

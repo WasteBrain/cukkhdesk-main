@@ -10,6 +10,9 @@ class Kontrol extends BaseController
     public function index(){
         return view('Admin/app');
     }
+    public function manualinput(){
+        return view('Admin/manualinput');
+    }
     public function viewticket(){
         return view('Admin/submitted');
     }
@@ -24,5 +27,8 @@ class Kontrol extends BaseController
 
     public function rejectedticket(){
         return view('Admin/rejectedticket');
+    }
+    public function aboutUS(){
+        return view('Admin/tentang');
     }
 }

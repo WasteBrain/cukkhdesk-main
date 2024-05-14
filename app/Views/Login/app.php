@@ -54,7 +54,7 @@
 
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Login</h5>
-                    <p class="text-center small">Enter your username & password to login</p><br>
+                    <p class="text-center small">Gunakan username & password untuk login</p><br>
                     <?php if(session()->getFlashdata('msg')):?>
                       <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
                     <?php endif;?>
@@ -67,20 +67,20 @@
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                         <input type="text" name="username" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Please enter your username.</div>
+                        <div class="invalid-feedback">Gunakan username kamu.</div>
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
-                      <div class="invalid-feedback">Please enter your password!</div>
+                      <div class="invalid-feedback">Gunakan password kamu!</div>
                     </div>
                     
                     <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" onclick="showPWD()" type="checkbox" name="remember" value="true" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Show Password</label>
+                        <label class="form-check-label" for="rememberMe">Tampilkan Password</label>
                       </div>
                     </div>
                     <div class="col-12">

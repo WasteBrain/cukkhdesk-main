@@ -31,7 +31,7 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="#">
                 <i class="bi bi-person"></i>
-                <span>My Profile</span>
+                <span>Profil Saya</span>
               </a>
             </li>
             <li>
@@ -43,7 +43,7 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="#">
                 <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
+                <span>Log Out</span>
               </a>
             </li>
 
@@ -69,32 +69,32 @@
         
         <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tickets</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-layout-text-window-reverse"></i><span>Tiket</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>New Ticket - Manual Input</span>
+            <a href="<?= base_url('admin/manualinput') ?>">
+              <i class="bi bi-circle"></i><span>Tiket Baru - Manual Input</span>
             </a>
           </li>
           <li>
             <a href="<?= base_url('admin/viewticket') ?>">
-              <i class="bi bi-circle"></i><span>Submitted</span>
+              <i class="bi bi-circle"></i><span>Tiket Masuk</span>
             </a>
           </li>
           <li>
             <a href="<?= base_url('admin/ticketprogress') ?>">
-              <i class="bi bi-circle"></i><span>Progress</span>
+              <i class="bi bi-circle"></i><span>Tiket Sedang Berjalan</span>
             </a>
           </li>
           <li>
             <a href="<?= base_url('admin/ticketdone') ?>">
-              <i class="bi bi-circle"></i><span>Done</span>
+              <i class="bi bi-circle"></i><span>Tiket Selesai</span>
             </a>
           </li>
           <li>
             <a href="<?= base_url('admin/rejectedticket') ?>">
-              <i class="bi bi-circle"></i><span>Reject</span>
+              <i class="bi bi-circle"></i><span>Tiket Ditolak</span>
             </a>
           </li>
         </ul>
@@ -102,13 +102,13 @@
       <li class="nav-item">
             <a class="nav-link collapsed" href="#">
             <i class="ri-article-fill"></i>
-            <span>Reports</span>
+            <span>Laporan</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
+            <a class="nav-link collapsed" href="<?= base_url('admin/tentang') ?>">
             <i class="bi bi-info-square-fill"></i>
-            <span>About</span>
+            <span>Tentang</span>
             </a>
         </li><!-- End About Page Nav -->
 

@@ -19,14 +19,17 @@ $routes->group('bo', ['namespace' => 'App\Controllers\Front\BO'], static functio
     $routes->get('dashboard', 'Kontrol::index');
     $routes->get('newticket', 'Kontrol::newticket');
     $routes->get('myticket', 'Kontrol::myTicketList');
+    $routes->get('tentang', 'Kontrol::aboutUS');
 });
 
 $routes->group('admin', ['namespace' => 'App\Controllers\Front\Admin'], static function ($routes) {
     $routes->get('dashboard', 'Kontrol::index');
+    $routes->get('manualinput', 'Kontrol::manualinput');
     $routes->get('viewticket', 'Kontrol::viewticket');
     $routes->get('ticketprogress', 'Kontrol::ticketprogress');
     $routes->get('ticketdone', 'Kontrol::ticketdone');
     $routes->get('rejectedticket', 'Kontrol::rejectedticket');
+    $routes->get('tentang', 'Kontrol::aboutUS');
 });
 
 $routes->group('afi', ['namespace' => 'App\Controllers\Front\AFI'], static function ($routes) {

@@ -18,4 +18,8 @@ class Kontrol extends BaseController
     public function myTicketList(){
         return view('BO/myticket');
     }
+
+    public function aboutUS(){
+        return view('BO/tentang');
+    }
 }

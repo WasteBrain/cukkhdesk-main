@@ -57,16 +57,18 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">No. Tiket</th>
                                     <th scope="col">Branch Office</th>
-                                    <th scope="col">Problem Description</th>
+                                    <th scope="col">Deskripsi Persoalan</th>
                                     <th scope="col">File</th>
-                                    <th scope="col">Date Submitted</th>
+                                    <th scope="col">Tgl Masuk</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1</td>
+                                    <td>SC123</td>
                                     <td>Badau</td>
                                     <td>Network Connectivity Issue</td>
                                     <td><a href="file1.pdf">file1.pdf</a></td>
@@ -77,6 +79,7 @@
                                 </tr>
                                 <tr>
                                     <td>2</td>
+                                    <td>SC124</td>
                                     <td>Tapang Pulau</td>
                                     <td>Software Installation Problem</td>
                                     <td><a href="file2.docx">file2.docx</a></td>
@@ -85,6 +88,7 @@
                                 </tr>
                                 <tr>
                                     <td>3</td>
+                                    <td>SC125</td>
                                     <td>Belikai</td>
                                     <td>Hardware Malfunction</td>
                                     <td><a href="file3.jpg">file3.jpg</a></td>
@@ -93,6 +97,7 @@
                                 </tr>
                                 <tr>
                                     <td>4</td>
+                                    <td>SC126</td>
                                     <td>Rumah Sepan</td>
                                     <td>Email Configuration Issue</td>
                                     <td><a href="file4.txt">file4.txt</a></td>
@@ -101,6 +106,7 @@
                                 </tr>
                                 <tr>
                                     <td>5</td>
+                                    <td>SC127</td>
                                     <td>Bodok</td>
                                     <td>Printer Not Printing</td>
                                     <td><a href="file5.pdf">file5.pdf</a></td>
@@ -109,6 +115,7 @@
                                 </tr>
                                 <tr>
                                     <td>6</td>
+                                    <td>SC128</td>
                                     <td>Tumbang Kejamei</td>
                                     <td>Database Error</td>
                                     <td><a href="file6.sql">file6.sql</a></td>
@@ -117,6 +124,7 @@
                                 </tr>
                                 <tr>
                                     <td>7</td>
+                                    <td>SC129</td>
                                     <td>Kantor Sentral</td>
                                     <td>Application Crashing</td>
                                     <td><a href="file7.log">file7.log</a></td>
@@ -148,27 +156,29 @@
                         <div class="col-sm-8"> <input type="text" class="form-control" name="kodeKas" value="Badau" disabled> </div>
                     </div>
                     <div class="row mb-3">
-                        <label class="col-sm-4 col-form-label">Problem Description</label>
+                        <label class="col-sm-4 col-form-label">Deskripsi Persoalan</label>
                         <div class="col-sm-8">
                             <textarea class="form-control" name="inputProblem" style="height: 100px;" disabled>Network Connectivity Issue</textarea>
                         </div>
                     </div>   
                     <div class="row mb-3">
-                        <label class="col-sm-4 col-form-label">Date Submitted</label>
+                        <label class="col-sm-4 col-form-label">Tanggal Masuk</label>
                         <div class="col-sm-8"> <input type="text" class="form-control" name="dateSubmitted" value="2024-04-18" disabled> </div>
                     </div>
                     <div class="row mb-3">
-                        <label class="col-sm-4 col-form-label">Category</label>
+                        <label class="col-sm-4 col-form-label">Kategori</label>
                         <div class="col-sm-8">
                             <select class="form-select" aria-label="Default select example">
                                 <option value="1">Software</option>
                                 <option value="2">Hardware</option>
                                 <option value="3">Networking</option>
+                                <option value="4">ATM</option>
+                                <option value="5">KKD</option>
                             </select>
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label class="col-sm-4 col-form-label">Authorized by</label>
+                        <label class="col-sm-4 col-form-label">Otoritas Dept</label>
                         <div class="col-sm-8">
                             <select class="form-select" aria-label="Default select example">
                                 <option value="1">AFI</option>
@@ -179,7 +189,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label class="col-sm-4 col-form-label">Handed to</label>
+                        <label class="col-sm-4 col-form-label">Teknisi</label>
                         <div class="col-sm-8">
                             <select class="form-select" aria-label="Default select example">
                                 <option value="1">ANDI</option>
@@ -201,7 +211,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label class="col-sm-4 col-form-label">Note</label>
+                        <label class="col-sm-4 col-form-label">Catatan</label>
                         <div class="col-sm-8">
                             <textarea class="form-control" name="inputnote" style="height: 100px;"></textarea>
                         </div>
