@@ -8,13 +8,14 @@ use CodeIgniter\HTTP\ResponseInterface;
 class Kontrol extends BaseController
 {
     public function index(){
-        return view('Admin/app');
-    }
-    public function manualinput(){
-        return view('Admin/manualinput');
+        return view('Admin/Content/dashboard');
     }
     public function viewticket(){
-        return view('Admin/submitted');
+        return view('Admin/Content/Ticket/app');
+    }
+
+    public function manualinput(){
+        return view('Admin/manualinput');
     }
 
     public function ticketprogress(){
