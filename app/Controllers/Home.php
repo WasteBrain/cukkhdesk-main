@@ -7,7 +7,7 @@ class Home extends BaseController
 
     public function index(): string
     {
-        return view('Login/app');
+        return view('Login/login');
     }
 
     public function login()

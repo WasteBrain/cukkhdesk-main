@@ -3,318 +3,247 @@
 <?= $this->section('content') ?>
 <!-- Content Header (Page header) -->
 
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Tiket</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item">Tiket</li>
-              <li class="breadcrumb-item active">Masuk</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+<!-- Content Header (Page header) -->
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0">Tiket</h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item">Tiket</li>
+          <li class="breadcrumb-item active">Masuk</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-            
-          <div class="col-md-12">
-            <div class="card">
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <table class="table" >
-                  <thead>
-                    <tr>
-                      <th style="width: 10px">#</th>
-                      <th>Kode Tiket</th>
-                      <th>Branch Office</th>
-                      <th>Kategori</th>
-                      <th>Tgl Masuk</th>
-                      <th>Persoalan</th>
-                      <th style="width: 40px">Action</th>
-                    </tr>
-                  </thead>
-                  
-                  <tbody>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                        <td>1</td>
-                        <td>KS01SOFT</td>
-                        <td>Kantor Sentral</td>
-                        <td>Software</td>
-                        <td>11-7-2014</td>
-                        <td>Clean database</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-primary">
-                                <i class="ion ion-android-open"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                        <td>2</td>
-                        <td>KS01SOFT</td>
-                        <td>Kantor Sentral</td>
-                        <td>Software</td>
-                        <td>11-7-2014</td>
-                        <td>Clean database</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-block"><i class="ion ion-android-open"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                        <td>3</td>
-                        <td>KS01SOFT</td>
-                        <td>Kantor Sentral</td>
-                        <td>Software</td>
-                        <td>11-7-2014</td>
-                        <td>Clean database</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-block"><i class="ion ion-android-open"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                        <td>4</td>
-                        <td>KS01SOFT</td>
-                        <td>Kantor Sentral</td>
-                        <td>Software</td>
-                        <td>11-7-2014</td>
-                        <td>Clean database</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-block"><i class="ion ion-android-open"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                        <td>5</td>
-                        <td>KS01SOFT</td>
-                        <td>Kantor Sentral</td>
-                        <td>Software</td>
-                        <td>11-7-2014</td>
-                        <td>Clean database</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-block"><i class="ion ion-android-open"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                        <td>6</td>
-                        <td>KS01SOFT</td>
-                        <td>Kantor Sentral</td>
-                        <td>Software</td>
-                        <td>11-7-2014</td>
-                        <td>Clean database</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-block"><i class="ion ion-android-open"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                        <td>7</td>
-                        <td>KS01SOFT</td>
-                        <td>Kantor Sentral</td>
-                        <td>Software</td>
-                        <td>11-7-2014</td>
-                        <td>Clean database</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-block"><i class="ion ion-android-open"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                        <td>8</td>
-                        <td>KS01SOFT</td>
-                        <td>Kantor Sentral</td>
-                        <td>Software</td>
-                        <td>11-7-2014</td>
-                        <td>Clean database</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-block"><i class="ion ion-android-open"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                        <td>9</td>
-                        <td>KS01SOFT</td>
-                        <td>Kantor Sentral</td>
-                        <td>Software</td>
-                        <td>11-7-2014</td>
-                        <td>Clean database</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-block"><i class="ion ion-android-open"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                        <td>10</td>
-                        <td>KS01SOFT</td>
-                        <td>Kantor Sentral</td>
-                        <td>Software</td>
-                        <td>11-7-2014</td>
-                        <td>Clean database</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-block"><i class="ion ion-android-open"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                        <td>11</td>
-                        <td>KS01SOFT</td>
-                        <td>Kantor Sentral</td>
-                        <td>Software</td>
-                        <td>11-7-2014</td>
-                        <td>Clean database</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-block"><i class="ion ion-android-open"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                        <td>12</td>
-                        <td>KS01SOFT</td>
-                        <td>Kantor Sentral</td>
-                        <td>Software</td>
-                        <td>11-7-2014</td>
-                        <td>Clean database</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-block"><i class="ion ion-android-open"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                        <td>13</td>
-                        <td>KS01SOFT</td>
-                        <td>Kantor Sentral</td>
-                        <td>Software</td>
-                        <td>11-7-2014</td>
-                        <td>Clean database</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-block"><i class="ion ion-android-open"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+<!-- Main content -->
+<section class="content">
+
+  <div class="container-fluid">
+
+    <!-- Timelime example  -->
+    <div class="row">
+      <div class="col-md-12">
+        <!-- The time line -->
+        <div class="timeline">
+          <!-- timeline time label -->
+          <div class="time-label">
+            <span class="bg-blue">10 Feb. 2014</span>
+          </div>
+          <!-- /.timeline-label -->
+          <!-- timeline item -->
+          <div>
+            <i class="fas fa-envelope bg-yellow"></i>
+            <div class="timeline-item">
+              <div class="ribbon-wrapper">
+                <div class="ribbon bg-warning">
+                  MEDIUM
+                </div>
               </div>
-              <!-- /.card-body -->
+              <span class="time"></span>
+              <h3 class="timeline-header bg-warning">
+                <a href="#">Kantor Pusat</a>
+                <span class="badge badge-white"><i class="fas fa-clock"></i> 14:05</span>
+              </h3>
+              <div class="timeline-body">
+                No. Tiket : <strong>KP01SOFT</strong>
+                <p class="text-muted"></p>
+
+                Kategori : <strong>SOFTWARE</strong>
+                <p class="text-muted"></p>
+                Staf Terkait : <strong>SARIANI ANBI | KASIR</strong>
+                <p class="text-muted"></p>
+
+                Persoalan : <strong>Clean Database</strong>
+                <p class="text-muted">
+                  Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                  weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                  jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                  quora plaxo ideeli hulu weebly balihoo...
+                </p>
+
+                File : <strong>Clean Database</strong>
+              </div>
+              <div class="timeline-footer">
+                <form class="form-horizontal">
+                  <div class="input-group input-group">
+
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Teknisi</span>
+                    </div>
+                    <select class="form-control form-control" aria-label="Default select example">
+                      <option value="1">ANDI</option>
+                      <option value="2">HENDRO</option>
+                      <option value="3">EGO</option>
+                      <option value="4">RIO</option>
+                      <option value="5">INDRA</option>
+                      <option value="6">CIKA</option>
+                      <option value="7">ANDI</option>
+                      <option value="8">TENDO</option>
+                      <option value="9">ABET</option>
+                      <option value="10">YANTO</option>
+                      <option value="11">RIDWAN</option>
+                      <option value="12">EVAN</option>
+                      <option value="13">CANDRA</option>
+                      <option value="14">ATOT</option>
+                    </select>
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-    <div class="modal fade" id="modal-primary">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header bg-primary">
-              <h4 class="modal-title">Primary Modal</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>One fine body&hellip;</p>
-            </div>
-            <div class="modal-footer justify-content-between bg-primary">
-              <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-outline-light">Save changes</button>
+          <!-- END timeline item -->
+          <!-- timeline item -->
+          <div>
+            <i class="fas fa-envelope bg-blue"></i>
+            <div class="timeline-item">
+              <div class="ribbon-wrapper">
+                <div class="ribbon bg-danger">
+                  URGENT
+                </div>
+              </div>
+              <span class="time"></span>
+              <h3 class="timeline-header bg-danger">
+                <a href="#">Kantor Sentral</a>
+                <span class="badge badge-white"><i class="fas fa-clock"></i> 12:05</span>
+              </h3>
+              <div class="timeline-body">
+                No. Tiket : <strong>KS01SOFT</strong>
+                <p class="text-muted"></p>
+
+                Kategori : <strong>SOFTWARE</strong>
+                <p class="text-muted"></p>
+                Staf Terkait : <strong>SARIANI ANBI | KASIR</strong>
+                <p class="text-muted"></p>
+
+                Persoalan : <strong>Clean Database</strong>
+                <p class="text-muted">
+                  Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                  weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                  jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                  quora plaxo ideeli hulu weebly balihoo...
+                </p>
+
+                File : <strong>Clean Database</strong>
+              </div>
+              <div class="timeline-footer">
+                <form class="form-horizontal">
+                  <div class="input-group input-group">
+
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Teknisi</span>
+                    </div>
+                    <select class="form-control form-control" aria-label="Default select example">
+                      <option value="1">ANDI</option>
+                      <option value="2">HENDRO</option>
+                      <option value="3">EGO</option>
+                      <option value="4">RIO</option>
+                      <option value="5">INDRA</option>
+                      <option value="6">CIKA</option>
+                      <option value="7">ANDI</option>
+                      <option value="8">TENDO</option>
+                      <option value="9">ABET</option>
+                      <option value="10">YANTO</option>
+                      <option value="11">RIDWAN</option>
+                      <option value="12">EVAN</option>
+                      <option value="13">CANDRA</option>
+                      <option value="14">ATOT</option>
+                    </select>
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-          <!-- /.modal-content -->
+          <!-- END timeline item -->
+          <!-- timeline item -->
+          <div>
+            <i class="fas fa-envelope bg-red"></i>
+            <div class="timeline-item">
+              <div class="ribbon-wrapper">
+                <div class="ribbon bg-danger">
+                  URGENT
+                </div>
+              </div>
+              <span class="time"></span>
+              <h3 class="timeline-header bg-danger">
+                <a href="#">Nanga Mau</a>
+                <span class="badge badge-white"><i class="fas fa-clock"></i> 12:05</span>
+              </h3>
+              <div class="timeline-body">
+                No. Tiket : <strong>NM01SOFT</strong>
+                <p class="text-muted"></p>
+
+                Kategori : <strong>SOFTWARE</strong>
+                <p class="text-muted"></p>
+                Staf Terkait : <strong>SARIANI ANBI | KASIR</strong>
+                <p class="text-muted"></p>
+
+                Persoalan : <strong>Clean Database</strong>
+                <p class="text-muted">
+                  Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                  weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                  jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                  quora plaxo ideeli hulu weebly balihoo...
+                </p>
+
+                File : <strong>Clean Database</strong>
+              </div>
+              <div class="timeline-footer">
+                <form class="form-horizontal">
+                  <div class="input-group input-group">
+
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Teknisi</span>
+                    </div>
+                    <select class="form-control form-control" aria-label="Default select example">
+                      <option value="1">ANDI</option>
+                      <option value="2">HENDRO</option>
+                      <option value="3">EGO</option>
+                      <option value="4">RIO</option>
+                      <option value="5">INDRA</option>
+                      <option value="6">CIKA</option>
+                      <option value="7">ANDI</option>
+                      <option value="8">TENDO</option>
+                      <option value="9">ABET</option>
+                      <option value="10">YANTO</option>
+                      <option value="11">RIDWAN</option>
+                      <option value="12">EVAN</option>
+                      <option value="13">CANDRA</option>
+                      <option value="14">ATOT</option>
+                    </select>
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- END timeline item -->
+          <div>
+            <i class="fas fa-clock bg-gray"></i>
+          </div>
         </div>
-        <!-- /.modal-dialog -->
       </div>
-      <!-- /.modal -->
+      <!-- /.col -->
+    </div>
+  </div>
+  <!-- /.timeline -->
+</section>
+
+<!-- /.content -->
+
 
 <?= $this->endSection() ?>
