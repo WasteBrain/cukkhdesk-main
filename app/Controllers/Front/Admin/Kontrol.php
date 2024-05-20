@@ -7,29 +7,41 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class Kontrol extends BaseController
 {
-    public function index(){
+    public function index()
+    {
         return view('Admin/Content/dashboard');
     }
-    public function viewticket(){
+    public function viewticket()
+    {
         return view('Admin/Content/Ticket/app');
     }
 
-    public function manualinput(){
-        return view('Admin/manualinput');
+    public function ticketprogress()
+    {
+        return view('Admin/Content/Ticket/onprogress');
+    }
+    public function ticketdone()
+    {
+        return view('Admin/Content/Ticket/done');
     }
 
-    public function ticketprogress(){
-        return view('Admin/ticketprogress');
+    public function detail()
+    {
+        return view('Admin/Content/Ticket/detail');
+    }
+    public function detailprint()
+    {
+        return view('Admin/Content/Ticket/detailprint');
     }
 
-    public function ticketdone(){
-        return view('Admin/ticketdone');
-    }
 
-    public function rejectedticket(){
+
+    public function rejectedticket()
+    {
         return view('Admin/rejectedticket');
     }
-    public function aboutUS(){
+    public function aboutUS()
+    {
         return view('Admin/tentang');
     }
 }

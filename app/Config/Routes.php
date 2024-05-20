@@ -52,14 +52,16 @@ $routes->group('api', ['namespace' => 'App\Controllers\Api'], static function ($
 
 $routes->group('bo', ['namespace' => 'App\Controllers\Front\BO'], static function ($routes) {
     $routes->get('dashboard', 'Kontrol::index');
-    $routes->get('newticket', 'Kontrol::newticket');
-    $routes->get('myticket', 'Kontrol::myTicketList');
+    $routes->get('newticket', 'Kontrol::tiketbaru');
+    $routes->get('myticket', 'Kontrol::tiketsaya');
 });
 
 $routes->group('admin', ['namespace' => 'App\Controllers\Front\Admin'], static function ($routes) {
     $routes->get('dashboard', 'Kontrol::index');
     $routes->get('viewticket', 'Kontrol::viewticket');
     $routes->get('ticketprogress', 'Kontrol::ticketprogress');
+    $routes->get('ticketdetail', 'Kontrol::detail');
+    $routes->get('ticketdetailprint', 'Kontrol::detailprint');
     $routes->get('ticketdone', 'Kontrol::ticketdone');
     $routes->get('rejectedticket', 'Kontrol::rejectedticket');
 });

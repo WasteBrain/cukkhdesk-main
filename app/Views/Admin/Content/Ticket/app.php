@@ -68,7 +68,14 @@
                   quora plaxo ideeli hulu weebly balihoo...
                 </p>
 
-                File : <strong>Clean Database</strong>
+                File :
+                <div class="responsive">
+                  <div class="gallery">
+                    <a class="btn btn-info" target="_blank" href="<?= base_url() ?>assets/dist/img/photo2.png">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
               <div class="timeline-footer">
                 <form class="form-horizontal">
@@ -133,7 +140,14 @@
                   quora plaxo ideeli hulu weebly balihoo...
                 </p>
 
-                File : <strong>Clean Database</strong>
+                File :
+                <div class="responsive">
+                  <div class="gallery">
+                    <a class="btn btn-info" target="_blank" href="<?= base_url() ?>assets/dist/img/photo2.png">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
               <div class="timeline-footer">
                 <form class="form-horizontal">
@@ -198,7 +212,14 @@
                   quora plaxo ideeli hulu weebly balihoo...
                 </p>
 
-                File : <strong>Clean Database</strong>
+                File :
+                <div class="responsive">
+                  <div class="gallery">
+                    <a class="btn btn-info" target="_blank" href="<?= base_url() ?>assets/dist/img/photo2.png">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
               <div class="timeline-footer">
                 <form class="form-horizontal">
