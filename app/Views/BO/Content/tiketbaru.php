@@ -83,26 +83,31 @@
     $(document).on('submit', '#forminputtiket', function (par) {
         par.preventDefault();
         var desc = $('input[name="deskripsi"]');
+        var img = $('input[name="img"]');
         $.ajax({
-            url: "http://localhost:8080/api/insert",
+            url: "../api/insert",
             contentType: 'application/json',
             type: 'POST',
             data: JSON.stringify({
-                table: "tiket",
-                id: "",
-                data: [
-                    {
-                        "user_id": "11",
-                        "tiketkategori_id": "1",
-                        "status": "1",
-                        "prioritas": "none",
-                        "tgl_buat": "2024-05-14 00:00:00",
-                        "deskripsi": "Kalsdmkalskdlaksd;akd",
-                        "nama_file": "form trouble.docx",
-                        "img": "/assets/img/1_1_2024_04_06.jpg"
-                    }
-                ]
+                table: 'tiket',
+                id: '',
+                data: [$('#forminputtiket').serializeArray().reduce(function (obj, item) {
+                    obj[item.name] = item.value;
+                    return obj;
+                }, {})]
             }),
+            // data: [
+            //         {
+            //             "user_id": "11",
+            //             "tiketkategori_id": "1",
+            //             "status": "1",
+            //             "prioritas": "none",
+            //             "tgl_buat": "2024-05-14 00:00:00",
+            //             "deskripsi": "Kalsdmkalskdlaksd;akd",
+            //             "nama_file": "form trouble.docx",
+            //             "img": "/assets/img/1_1_2024_04_06.jpg"
+            //         }
+            //     ]
             dataType: 'JSON',
             success: function (response) {
 
