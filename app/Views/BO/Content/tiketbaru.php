@@ -31,45 +31,45 @@
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Form Tiket</h3>
+
+                        <?php if (session()->getFlashdata('message')): ?>
+                            <div class="alert alert-danger"><?= session()->getFlashdata('message') ?></div>
+                        <?php endif; ?>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form id="newTiketForm">
+                    <form id="forminputtiket">
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="persoalan">Persoalan</label>
-                                <input type="text" class="form-control" id="persoalan" placeholder="Persoalan">
+                                <label for="deskripsi">Deskripsi Persoalan</label>
+                                <textarea class="form-control" rows="5" name="deskripsi"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="persoalan">Deskripsi Persoalan</label>
-                                <textarea class="form-control" rows="5" name="deskripsipersoalan"
-                                    id="deskripsipersoalan"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputFile">File input</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                    </div>
+                            <!-- <div class="form-group">
+                                <div class="mb-3">
+                                    <label for="image_uploads" class="form-label">Lampiran Gambar</label>
+                                    <input class="form-control" type="file" id="image_uploads" name="img"
+                                        accept=".jpg, .jpeg, .png">
                                 </div>
-                            </div>
-                            <div class="form-group">
+                            </div> -->
+                            <!-- <div class="form-group">
                                 <label for="stafterkait">Staf Terkait</label>
-                                <input type="text" class="form-control" id="stafterkait" placeholder="Staf Terkait">
+                                <input type="text" class="form-control" name="staf_terkait" placeholder="Staf Terkait">
                             </div>
                             <div class="form-group">
                                 <label for="niastafterkait"> NIA Staf Terkait</label>
-                                <input type="text" class="form-control" id="niastafterkait"
+                                <input type="text" class="form-control" name="nia_staf_terkait"
                                     placeholder="NIA Staf Terkait">
-                            </div>
+                            </div> -->
                         </div>
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
+                            <button type="reset" class="btn btn-secondary" id="btnSubmit">Reset</button>
                         </div>
                     </form>
+
+
                 </div>
             </div>
         </div>
@@ -77,5 +77,39 @@
     </div><!-- /.container-fluid -->
 </section>
 <!-- /.content -->
+
+<script>
+
+    $(document).on('submit', '#forminputtiket', function (par) {
+        par.preventDefault();
+        var desc = $('input[name="deskripsi"]');
+        $.ajax({
+            url: "http://localhost:8080/api/insert",
+            contentType: 'application/json',
+            type: 'POST',
+            data: JSON.stringify({
+                table: "tiket",
+                id: "",
+                data: [
+                    {
+                        "user_id": "11",
+                        "tiketkategori_id": "1",
+                        "status": "1",
+                        "prioritas": "none",
+                        "tgl_buat": "2024-05-14 00:00:00",
+                        "deskripsi": "Kalsdmkalskdlaksd;akd",
+                        "nama_file": "form trouble.docx",
+                        "img": "/assets/img/1_1_2024_04_06.jpg"
+                    }
+                ]
+            }),
+            dataType: 'JSON',
+            success: function (response) {
+
+            }
+        });
+    });
+
+</script>
 
 <?= $this->endSection() ?>
