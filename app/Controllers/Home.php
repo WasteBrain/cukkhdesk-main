@@ -4,12 +4,12 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    
+
     public function index(): string
     {
-            return view('Login/app');
+        return view('Login/login');
     }
-    
+
     public function login()
     {
         /*
@@ -51,31 +51,39 @@ class Home extends BaseController
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
-        if ($username && $password)
-        {
+        if ($username && $password) {
 
-            if ($username == 'BranchOffice' && $password=='BO123!') {                
+            if ($username == 'BranchOffice' && $password == 'BO123!') {
                 return redirect()->to('bo/dashboard');
-            }elseif ($username == 'Admin' && $password=='ADM123!') {
+            } elseif ($username == 'Admin' && $password == 'ADM123!') {
                 return redirect()->to('admin/dashboard');
-            }elseif ($username == 'Keuangan' && $password=='AFI123!') {
+            } elseif ($username == 'Keuangan' && $password == 'AFI123!') {
                 return redirect()->to('afi/dashboard');
-            }elseif ($username == 'Kredit' && $password=='CCD123!') {
+            } elseif ($username == 'Kredit' && $password == 'CCD123!') {
                 return redirect()->to('ccd/dashboard');
-            }elseif ($username == 'Risk' && $password=='RMD123!') {
+            } elseif ($username == 'Risk' && $password == 'RMD123!') {
                 return redirect()->to('risk/dashboard');
-            }elseif ($username == 'Riyo' && $password=='ATM123!') {
+            } elseif ($username == 'Riyo' && $password == 'ATM123!') {
                 return redirect()->to('atm/dashboard');
-            }elseif ($username == 'Abet' && $password=='HDD123!') {
+            } elseif ($username == 'Abet' && $password == 'HDD123!') {
                 return redirect()->to('hdd/dashboard');
-            }else {
+            } else {
                 $session->setFlashdata('msg', 'Wrong username and password');
                 return $this->index();
             }
-           
         } else {
             $session->setFlashdata('msg', 'Wrong username and password');
             return $this->index();
         }
-     }
+    }
+
+    public function logout()
+    {
+        // session_start();
+
+        session_destroy();
+
+        session()->setFlashdata('msg', 'Kamu Logout');
+        return $this->index();
+    }
 }

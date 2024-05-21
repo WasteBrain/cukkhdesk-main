@@ -2,7 +2,7 @@
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
   <div class="d-flex align-items-center justify-content-between">
-    <a href="<?= base_url('hdd/dashboard') ?>" class="logo d-flex align-items-center">        
+    <a href="<?= base_url('pic/dashboard') ?>" class="logo d-flex align-items-center">        
       <img src="<?php echo base_url(); ?>assets/img/icon.png" alt="">
       <span class="d-none d-lg-block">HELPDESK</span>
     </a>
@@ -62,7 +62,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('hdd/dashboard') ?>">
+            <a class="nav-link" href="<?= base_url('pic/dashboard') ?>">
             <i class="ri-apps-fill"></i>
             <span>Dashboard</span>
             </a>
@@ -74,17 +74,17 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="<?= base_url('hdd/onholdticket') ?>">
+            <a href="<?= base_url('pic/onholdticket') ?>">
               <i class="bi bi-circle"></i><span>On Hold</span>
             </a>
           </li>
           <li>
-            <a href="<?= base_url('hdd/inprogressticket') ?>">
+            <a href="<?= base_url('pic/inprogressticket') ?>">
               <i class="bi bi-circle"></i><span>In Progress</span>
             </a>
           </li>
           <li>
-            <a href="<?= base_url('hdd/resolvedticket') ?>">
+            <a href="<?= base_url('pic/resolvedticket') ?>">
               <i class="bi bi-circle"></i><span>Resolved</span>
             </a>
           </li>
