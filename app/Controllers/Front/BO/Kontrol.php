@@ -19,7 +19,7 @@ class Kontrol extends BaseController
 
     public function tiketsaya()
     {
-        return view('BO/myticket');
+        return view('BO/Content/tiketsaya');
     }
 
     public function aboutUS()

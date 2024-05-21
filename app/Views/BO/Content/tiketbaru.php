@@ -44,14 +44,20 @@
                                 <label for="deskripsi">Deskripsi Persoalan</label>
                                 <textarea class="form-control" rows="5" name="deskripsi"></textarea>
                             </div>
-                            <!-- <div class="form-group">
+                            <div class="form-group">
                                 <div class="mb-3">
-                                    <label for="image_uploads" class="form-label">Lampiran Gambar</label>
+                                    <label for="image_uploads" class="form-label">Gambar</label>
                                     <input class="form-control" type="file" id="image_uploads" name="img"
                                         accept=".jpg, .jpeg, .png">
                                 </div>
-                            </div> -->
-                            <!-- <div class="form-group">
+                            </div>
+                            <div class="form-group">
+                                <div class="mb-3">
+                                    <label for="file_uploads" class="form-label">Lampiran File</label>
+                                    <input class="form-control" type="file" id="image_uploads" name="file_uploads">
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="stafterkait">Staf Terkait</label>
                                 <input type="text" class="form-control" name="staf_terkait" placeholder="Staf Terkait">
                             </div>
@@ -59,7 +65,7 @@
                                 <label for="niastafterkait"> NIA Staf Terkait</label>
                                 <input type="text" class="form-control" name="nia_staf_terkait"
                                     placeholder="NIA Staf Terkait">
-                            </div> -->
+                            </div>
                         </div>
                         <!-- /.card-body -->
 

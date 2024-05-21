@@ -14,7 +14,7 @@
         <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Kantor Sentral</a>
+        <a href="#" class="d-block"><?= session('kantor'); ?></a>
       </div>
     </div>
 
@@ -42,7 +42,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="<?= base_url('bo/newticket') ?>" class="nav-link">
+          <a href="<?= base_url('bo/myticket') ?>" class="nav-link">
             <i class="nav-icon fas fa-file-alt"></i>
             <p>
               Tiket Saya
