@@ -27,7 +27,7 @@
   <!-- ./wrapper -->
 
   <!-- script -->
-  <?= $this->include('Template/script'); ?>
+  <?= $this->include('Template/script_bo'); ?>
 </body>
 
 </html>

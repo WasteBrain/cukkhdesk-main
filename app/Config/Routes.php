@@ -46,7 +46,7 @@ $routes->group('api', ['namespace' => 'App\Controllers\Api'], static function ($
      * jika field terisi, hrus berserta value, ini adalah select where 'field' = 'value'
      * jika hanya table dan id yg diisi, maka ini adalah select where id = 'id'
      */
-    $routes->get('get', 'Api::get');
+    $routes->post('get', 'Api::get');
     $routes->delete('delete', 'Api::delete');
 });
 

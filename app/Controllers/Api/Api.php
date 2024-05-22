@@ -15,7 +15,8 @@ class Api extends BaseController
     // login sudah disesuaikan dengan php, dan bisa flashdata, ganti route form login ke api/login
     public function login()
     {
-        $session = session();
+        $session = \Config\Services::session();
+        // $session = session();
         // Get request bodi
         $requestBody = array();
         $requestBody['username'] = $_POST['username'];
@@ -65,13 +66,14 @@ class Api extends BaseController
         }
 
         // Set session data
-        $session = session();
+        // $session = session();
         $sessionData = [
-            'username'      => $userData['username'],
+            'user_id' => $userData['user_id'],
+            'username' => $userData['username'],
             'nama_pengguna' => $userData['nama_pengguna'],
-            'namagroup_id'  => $userData['namagroup_id'],
-            'nama_group'    => $userData['nama_group'],
-            'kantor'        => $userData['kantor'],
+            'namagroup_id' => $userData['namagroup_id'],
+            'nama_group' => $userData['nama_group'],
+            'kantor' => $userData['kantor'],
         ];
         $session->set($sessionData);
 
@@ -165,7 +167,7 @@ class Api extends BaseController
                 return $this->failServerError('Salah inputan table!');
         }
 
-        $id = isset($jsonData['id']) && !empty($jsonData['id']) ? (int)$jsonData['id'] : null;
+        $id = isset($jsonData['id']) && !empty($jsonData['id']) ? (int) $jsonData['id'] : null;
         $data = $jsonData['data'][0];
         if (!$validation->run($data)) {
             return $this->failValidationErrors($validation->getErrors());
@@ -201,7 +203,7 @@ class Api extends BaseController
         $table = $jsonData['table'];
         $field = isset($jsonData['field']) && !empty($jsonData['field']) ? $jsonData['field'] : null;
         $value = isset($jsonData['value']) && !empty($jsonData['value']) ? $jsonData['value'] : null;
-        $id = isset($jsonData['id']) && !empty($jsonData['id']) ? (int)$jsonData['id'] : null;
+        $id = isset($jsonData['id']) && !empty($jsonData['id']) ? (int) $jsonData['id'] : null;
 
         // var_dump($field, $value);
         // die;
@@ -232,7 +234,7 @@ class Api extends BaseController
 
         // tempatkan data ke dalam variable
         $table = $jsonData['table'];
-        $id = (int)$jsonData['id'];
+        $id = (int) $jsonData['id'];
 
         // validasi nama table
         switch ($table) {

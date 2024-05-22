@@ -83,6 +83,12 @@
     e.preventDefault();
     var currentDateTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
     console.log(currentDateTime);
+
+    //make ajax inside ajax
+    $.ajax({
+
+    });
+
     $.ajax({
       type: "POST",
       url: "../api/insert",
@@ -92,16 +98,19 @@
         data: [{
           user_id: $('input[name="user_id"]').val(),
           tiketkategori_id: $('select[name="tiketkategori_id"]').val(),
-          status: '1`', // status pertama kali input tetap 1
+          status: '1', // status pertama kali input tetap 1
           prioritas: 'none', // prioritas pertama input tetap none
           tgl_buat: currentDateTime, // gunakan tgl dan waktu saat input
           deskripsi: $('textarea[name="deskripsi"]').val(),
           nama_file: 'form trouble.docx', // nanti ganti dengan input/agak laen metode upload
+          // img location
           img: '/assets/img/1_1_2024_04_06.jpg' // nanti ganti dengan input/ agak laen metode upload
         }]
       }),
       success: function (response, textStatus, xhr) {
         if (xhr.status >= 200) {
+
+          // simpan file ke path
 
           swal({
             title: "Done",
@@ -121,6 +130,10 @@
       }
     });
   })
+
+  $(function () {
+    bsCustomFileInput.init();
+  });
 
 
 </script>
