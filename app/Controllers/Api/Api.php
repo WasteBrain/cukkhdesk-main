@@ -12,82 +12,59 @@ class Api extends BaseController
     use ResponseTrait;
 
     // login api
-    // login sudah disesuaikan dengan php, dan bisa flashdata, ganti route form login ke api/login
     public function login()
     {
-        $session = session();
         // Get request bodi
-        $requestBody = array();
-        $requestBody['username'] = $_POST['username'];
-        $requestBody['password'] = $_POST['password'];
-        // $requestBody = $this->request->getBody();
+        $requestBody = $this->request->getBody();
         $validation = \Config\Services::validation();
-        // $jsonData = json_decode($requestBody, true);
+        $jsonData = json_decode($requestBody, true);
 
-        // // validasi not empty
-        if (!$requestBody || !isset($requestBody['username']) || !isset($requestBody['password'])) {
-            // return $this->failUnauthorized('Invalid username or password');
-            $session->setFlashdata('gagal', 'tidak boleh kosong!');
-            return redirect()->to(base_url('/'));
+        // Validat JSON data
+        if (!$jsonData || !isset($jsonData['username']) || !isset($jsonData['password'])) {
+            return $this->failUnauthorized('Invalid username or password');
         }
 
-        $username = $requestBody['username'];
-        $password = $requestBody['password'];
+        $username = $jsonData['username'];
+        $password = $jsonData['password'];
 
-        // var_dump($username, $password);
-        // die;
         // Fetch user from database
         $morders = new ApiModel();
-        $result = $morders->getLog('login_view', null, ['username' => $username]);
+        $result = $morders->get('user', null, ['username' => $username]);
 
         if (!$result['status'] || empty($result['data'])) {
-            // return $this->failUnauthorized('User not found');
-            $session->setFlashdata('msg', 'User tidak ditemukan');
-            return redirect()->to(base_url('/'));
+            return $this->failUnauthorized('User not found');
         }
 
         $userData = $result['data'][0];
-        // var_dump($userData);
-        // die;
 
         // Check if user active
-        if ($userData['active'] !== "2") {
-            // return $this->failUnauthorized('User belum di restui Admin!');
-            $session->setFlashdata('msg', 'User belum di restui Admin!');
-            return redirect()->to(base_url('/'));
+        if ($userData['active'] !== "1") {
+            return $this->failUnauthorized('User belum di restui Admin!');
         }
 
         // Verify password
         if ($password !== $userData['password_hash']) {
-            // return $this->failUnauthorized('Incorrect password');
-            $session->setFlashdata('msg', 'Password salah!');
-            return redirect()->to(base_url('/'));
+            return $this->failUnauthorized('Incorrect password');
         }
 
         // Set session data
         $session = session();
         $sessionData = [
-            'username'      => $userData['username'],
-            'nama_pengguna' => $userData['nama_pengguna'],
-            'namagroup_id'  => $userData['namagroup_id'],
-            'nama_group'    => $userData['nama_group'],
-            'kantor'        => $userData['kantor'],
+            'username'       => $userData['username'],
+            'nama_pengguna'  => $userData['nama_pengguna'],
+            'usergroup_id'   => $userData['usergroup_id'],
+            'nomor_telepon' => $userData['nomor_telepon'],
+            'jabatan'        => $userData['jabatan'],
+            'kantor'         => $userData['kantor'],
         ];
         $session->set($sessionData);
 
-        if ($userData['namagroup_id'] == 1) {
-            $session->set('role', 'isAdmin');
-            return redirect()->to('admin/dashboard');
-        } elseif ($userData['namagroup_id'] > 1 && $userData['namagroup_id'] < 7) {
-            $session->set('role', 'isPIC');
-            return redirect()->to('pic/dashboard');
-        } elseif ($userData['namagroup_id'] > 6 && $userData['namagroup_id'] < 10) {
-            $session->set('role', 'isVal');
-            return redirect()->to('validators/dashboard');
-        } else {
-            $session->set('role', 'isBO');
-            return redirect()->to('bo/dashboard');
-        }
+        $response = [
+            'status' => true,
+            'message' => "Sukses Login",
+            'data' => $sessionData
+        ];
+        return $this->respond($response, 200);
     }
 
     //insert jika manyertakan id adalah update
@@ -105,7 +82,7 @@ class Api extends BaseController
         $table = $jsonData['table'];
 
         switch ($table) {
-            case "namagroup":
+            case "usergroup":
                 // Validasi data
                 $validation->setRules([
                     'nama_group' => 'required'
@@ -114,23 +91,16 @@ class Api extends BaseController
             case "user":
                 // Validasi data
                 $validation->setRules([
-                    'namagroup_id' => 'required',
                     'nama_pengguna' => 'required',
                     'username' => 'required',
                     'active' => 'required',
                     'password_hash' => 'required',
-                    'nomor_telepon' => 'required',
+                    'usergroup_id' => 'required',
+                    'nomor_telepon' => 'required',                    
                     'jabatan' => 'required',
                     'kantor' => 'required',
                 ]);
-                break;
-            case "tiketgroup":
-                // Validasi data
-                $validation->setRules([
-                    'tiketkategori_id' => 'required',
-                    'namagroup_id' => 'required'
-                ]);
-                break;
+                break;            
             case "tiketkategori":
                 // Validasi data
                 $validation->setRules([
@@ -144,11 +114,12 @@ class Api extends BaseController
                     'user_id' => 'required',
                     'tiketkategori_id' => 'required',
                     'status' => 'required',
-                    'prioritas' => 'required',
-                    'tgl_buat' => 'required',
+                    'prioritas' => 'required',                    
+                    'dibuat_pada' => 'required',
                     'deskripsi' => 'required',
+                    'ditugaskan_user_id' => 'required',
                     'nama_file' => 'required',
-                    'img' => 'required'
+                    'url_gambar' => 'required'
                 ]);
                 break;
             case "komentar":
@@ -156,9 +127,8 @@ class Api extends BaseController
                 $validation->setRules([
                     'tiket_id' => 'required',
                     'user_id' => 'required',
-                    'tgl_komen' => 'required',
-                    'komentar' => 'required',
-                    'new_status' => 'required'
+                    'dibuat_pada' => 'required|valid_email',
+                    'teks_komentar' => 'required'
                 ]);
                 break;
             default:
@@ -170,7 +140,7 @@ class Api extends BaseController
         if (!$validation->run($data)) {
             return $this->failValidationErrors($validation->getErrors());
         }
-
+        
         // Insert data ke database
         $partnerModel = new ApiModel();
         $result = $partnerModel->insert_table($data, $table, $id);
@@ -199,16 +169,11 @@ class Api extends BaseController
 
         // menyimpan data kiriman ke dalam variable
         $table = $jsonData['table'];
-        $field = isset($jsonData['field']) && !empty($jsonData['field']) ? $jsonData['field'] : null;
-        $value = isset($jsonData['value']) && !empty($jsonData['value']) ? $jsonData['value'] : null;
         $id = isset($jsonData['id']) && !empty($jsonData['id']) ? (int)$jsonData['id'] : null;
-
-        // var_dump($field, $value);
-        // die;
 
         // inisialisasi model dan ambil data dari database
         $morders = new ApiModel();
-        $result = $morders->get($table, $field, $value, $id);
+        $result = $morders->get($table, $id);
 
         // pengiriman response 
         if ($result['status'] === true) {
@@ -236,20 +201,20 @@ class Api extends BaseController
 
         // validasi nama table
         switch ($table) {
-            case "usergroup":
+            case "usergroup":                
                 break;
-            case "user":
+            case "user":                
+                break;            
+            case "tiketkategori":                
                 break;
-            case "tiketkategori":
+            case "tiket":                
                 break;
-            case "tiket":
-                break;
-            case "komentar":
+            case "komentar":                
                 break;
             default:
                 return $this->failServerError('Salah inputan table!');
-        }
-
+        }        
+        
         // Delete data from the database
         $partnerModel = new ApiModel();
         $result = $partnerModel->delete_table($table, $id);
@@ -261,4 +226,5 @@ class Api extends BaseController
             return $this->fail($result);
         }
     }
+
 }

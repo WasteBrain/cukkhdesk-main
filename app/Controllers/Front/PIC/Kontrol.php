@@ -7,18 +7,24 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class Kontrol extends BaseController
 {
-    public function index()
+    public function indexATM()
     {
-        return view('PIC/HARDWARE/app');
+        //
     }
-
-    public function onhold(){
-        return view('PIC/HARDWARE/onholdticket');
+    public function indexHARDWARE()
+    {
+        //
+    }    
+    public function indexKKD()
+    {
+        //
     }
-    public function inprogress(){
-        return view('PIC/HARDWARE/inprogress');
+    public function indexNETWORK()
+    {
+        //
     }
-    public function resolved(){
-        return view('PIC/HARDWARE/resolvedticket');
+    public function indexSOFTWARE()
+    {
+        //
     }
 }
