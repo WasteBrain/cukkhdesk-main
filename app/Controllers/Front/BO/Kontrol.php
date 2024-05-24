@@ -7,23 +7,15 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class Kontrol extends BaseController
 {
-    public function index()
-    {
-        return view('BO/Content/dashboard');
+    public function index(){
+        return view('BO/app');
     }
 
-    public function tiketbaru()
-    {
-        return view('BO/Content/tiketbaru');
+    public function newTicket(){
+        return view('BO/newticket');
     }
 
-    public function tiketsaya()
-    {
-        return view('BO/Content/tiketsaya');
-    }
-
-    public function aboutUS()
-    {
-        return view('BO/tentang');
+    public function myTicketList(){
+        return view('BO/myticket');
     }
 }
