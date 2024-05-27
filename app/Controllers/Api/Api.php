@@ -105,7 +105,7 @@ class Api extends BaseController
         $table = $jsonData['table'];
 
         switch ($table) {
-            case "namagroup":
+            case "employee":
                 // Validasi data
                 $validation->setRules([
                     'nama_group' => 'required'
