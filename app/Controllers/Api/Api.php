@@ -39,6 +39,8 @@ class Api extends BaseController
         // Fetch user from database
         $morders = new ApiModel();
         $result = $morders->getLog('login_view', null, ['username' => $username]);
+        // var_dump($result);
+        // die;
 
         if (!$result['status'] || empty($result['data'])) {
             // return $this->failUnauthorized('User not found');
@@ -67,6 +69,7 @@ class Api extends BaseController
         // Set session data
         $session = session();
         $sessionData = [
+            'user_id'       => $userData['user_id'],
             'username'      => $userData['username'],
             'nama_pengguna' => $userData['nama_pengguna'],
             'namagroup_id'  => $userData['namagroup_id'],
